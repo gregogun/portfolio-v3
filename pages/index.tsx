@@ -1,5 +1,5 @@
-import { ThemeToggle } from '../utils/themeToggle';
-import { text } from '../styles/text';
+import { ThemeToggle } from 'components/themeToggle';
+import { text } from 'styles/text';
 
 export default function Home() {
   return (
