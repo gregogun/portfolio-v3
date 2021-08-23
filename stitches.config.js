@@ -7,13 +7,14 @@ export const stitchesConfig = createCss({
       secondary: '#010',
       tertiary: '#a1a1a1'
     },
+    fonts: {
+      sans: 'Inter, apple-system, sans-serif'
+    },
     media: {
       dark: '(prefers-color-scheme: dark)'
     }
   }
 });
-
-export const { styled, getCssString } = stitchesConfig;
 
 export const darkTheme = stitchesConfig.theme({
   colors: {
@@ -40,7 +41,30 @@ export const globalStyles = stitchesConfig.global({
         };
       }, {})
     }
+  },
+  '@font-face': {
+    fontFamily: 'Inter',
+    // fontStyle: 'normal',
+    fontWeight: 400,
+    fontDisplay: 'optional',
+    src: 'url(./public/fonts/inter-v3-latin-regular.woff) format("woff") url(./public/fonts/inter-v3-latin-regular.woff2) format("woff2")'
+  },
+  '@font-face': {
+    fontFamily: 'Inter',
+    // fontStyle: 'normal',
+    fontWeight: 600,
+    fontDisplay: 'optional',
+    src: 'url(./public/fonts/inter-v3-latin-600.woff) format("woff") url(./public/fonts/inter-v3-latin-600.woff2) format("woff2")'
+  },
+  '@font-face': {
+    fontFamily: 'Inter',
+    // fontStyle: 'normal',
+    fontWeight: 800,
+    fontDisplay: 'optional',
+    src: 'url(./public/fonts/inter-v3-latin-800.woff) format("woff") url(./public/fonts/inter-v3-latin-800.woff2) format("woff2")'
   }
 });
 
 globalStyles();
+
+export const { styled, getCssString, css, keyframes } = stitchesConfig;

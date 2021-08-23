@@ -7,7 +7,17 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssString() }} />
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssString() }}
+          />
+          <link
+            rel="preload"
+            href="/fonts/inter-var3-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
         </Head>
         <body>
           <Main />
