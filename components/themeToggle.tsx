@@ -7,7 +7,10 @@ const toggleButton = css({
   background: 'transparent',
   padding: '1rem',
   border: 0,
-  cursor: 'pointer'
+  cursor: 'pointer',
+  '&:hover': {
+    background: '$accent'
+  }
 });
 
 export const ThemeToggle = ({ children }) => {
