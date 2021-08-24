@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { css } from '@stitches/react';
+import { css } from 'stitches.config';
 
 const toggleButton = css({
-  borderRadius: '22px',
+  borderRadius: '8px',
   position: 'relative',
   display: 'inline-flex',
   alignItems: 'center',
@@ -11,13 +11,8 @@ const toggleButton = css({
   fontSize: '1.25rem',
   fontWeight: 'bold',
   padding: '0.5rem 1rem',
-  color: '$primary',
   border: 0,
-  cursor: 'pointer',
-  background: '$secondary',
-  '&:hover': {
-    color: '$tertiary'
-  }
+  cursor: 'pointer'
 });
 
 export const ThemeToggle = ({ children }) => {
