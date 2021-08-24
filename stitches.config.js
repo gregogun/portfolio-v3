@@ -3,9 +3,23 @@ import { createCss } from '@stitches/react';
 export const stitchesConfig = createCss({
   theme: {
     colors: {
-      primary: '#fefefe',
-      secondary: '#010101',
-      tertiary: '#a1a1a1'
+      // color tokens
+
+      //neutrals
+      black: '#161616',
+      white: '#fefefe',
+      neutral50: '#fcfcfc',
+      neutral100: '#e8e8e8',
+      neutral200: '#c7c7c7',
+      neutral300: '#8f8f8f',
+      neutral400: '#555555',
+      neutral500: '#2f2f2f',
+
+      // semantic tokens
+      primary: '$white',
+      secondary: '$black',
+      tertiary: '$neutral400',
+      accent: '$neutral100',
     },
     fonts: {
       sans: 'Inter, apple-system, Verdana, sans-serif'
@@ -18,9 +32,11 @@ export const stitchesConfig = createCss({
 
 export const darkTheme = stitchesConfig.theme('dark-theme', {
   colors: {
-    primary: '#010101',
-    secondary: '#fefefe',
-    tertiary: '#898989'
+    primary: '$black',
+    secondary: '$white',
+    tertiary: '$neutral300',
+    accent: '$neutral500',
+
   }
 });
 
