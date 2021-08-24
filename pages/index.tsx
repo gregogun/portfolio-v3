@@ -25,7 +25,7 @@ const Container = styled('div', {
 
 const Navbar = styled('div', {
   marginTop: '64px',
-  height: '128px',
+  height: '64px',
   boxSizing: 'border-box',
   display: 'flex',
   alignItems: 'center',
@@ -83,7 +83,7 @@ export default function Home() {
             fontFamily: 'Poppins, apple-system, Verdana, sans-serif',
             marginBottom: '40px'
           },
-          size: 'title',
+          size: '4xl',
           weight: 'semibold'
         })}
       >
@@ -103,7 +103,7 @@ export default function Home() {
       <p
         className={text({
           css: {
-            marginBottom: '64px',
+            marginBottom: '32px',
             color: '$secondary',
             fontSize: '24px'
           },
