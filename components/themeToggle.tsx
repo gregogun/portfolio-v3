@@ -4,19 +4,10 @@ import { css } from 'stitches.config';
 
 const toggleButton = css({
   borderRadius: '4px',
-  // position: 'relative',
-  // display: 'inline-flex',
-  // alignItems: 'center',
-  // fontFamily: '$sans',
-  // fontSize: '1.25rem',
-  // fontWeight: 'bold',
   background: 'transparent',
   padding: '1rem',
   border: 0,
-  cursor: 'pointer',
-  '&:hover': {
-    background: '#333333'
-  }
+  cursor: 'pointer'
 });
 
 export const ThemeToggle = ({ children }) => {
