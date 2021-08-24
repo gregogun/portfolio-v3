@@ -3,16 +3,20 @@ import { useTheme } from 'next-themes';
 import { css } from 'stitches.config';
 
 const toggleButton = css({
-  borderRadius: '8px',
-  position: 'relative',
-  display: 'inline-flex',
-  alignItems: 'center',
-  fontFamily: '$sans',
-  fontSize: '1.25rem',
-  fontWeight: 'bold',
-  padding: '0.5rem 1rem',
+  borderRadius: '4px',
+  // position: 'relative',
+  // display: 'inline-flex',
+  // alignItems: 'center',
+  // fontFamily: '$sans',
+  // fontSize: '1.25rem',
+  // fontWeight: 'bold',
+  background: 'transparent',
+  padding: '1rem',
   border: 0,
-  cursor: 'pointer'
+  cursor: 'pointer',
+  '&:hover': {
+    background: '#333333'
+  }
 });
 
 export const ThemeToggle = ({ children }) => {
