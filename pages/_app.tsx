@@ -4,9 +4,10 @@ import { ThemeProvider } from 'next-themes';
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider
+      disableTransitionOnChange
       attribute="class"
       defaultTheme="dark"
-      value={{ dark: darkTheme.className, light: 'light' }}
+      value={{ dark: darkTheme.toString(), light: 'light' }}
     >
       <Component {...pageProps} />
     </ThemeProvider>

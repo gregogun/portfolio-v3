@@ -3,12 +3,12 @@ import { createCss } from '@stitches/react';
 export const stitchesConfig = createCss({
   theme: {
     colors: {
-      primary: '#fef',
-      secondary: '#010',
+      primary: '#fefefe',
+      secondary: '#010101',
       tertiary: '#a1a1a1'
     },
     fonts: {
-      sans: 'Inter, apple-system, sans-serif'
+      sans: 'Inter, apple-system, Verdana, sans-serif'
     },
     media: {
       dark: '(prefers-color-scheme: dark)'
@@ -16,10 +16,10 @@ export const stitchesConfig = createCss({
   }
 });
 
-export const darkTheme = stitchesConfig.theme({
+export const darkTheme = stitchesConfig.theme('dark-theme', {
   colors: {
-    primary: '#010',
-    secondary: '#fef',
+    primary: '#010101',
+    secondary: '#fefefe',
     tertiary: '#898989'
   }
 });
