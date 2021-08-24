@@ -62,6 +62,13 @@ export const globalStyles = stitchesConfig.global({
     fontWeight: 800,
     fontDisplay: 'optional',
     src: 'url(./public/fonts/inter-v3-latin-800.woff) format("woff") url(./public/fonts/inter-v3-latin-800.woff2) format("woff2")'
+  },
+  '@font-face': {
+    fontFamily: 'Poppins',
+    // fontStyle: 'normal',
+    fontWeight: 600,
+    fontDisplay: 'optional',
+    src: 'url(./public/fonts/poppins-v15-latin-600.woff) format("woff") url(./public/fonts/poppins-v15-latin-600.woff2) format("woff2")'
   }
 });
 
