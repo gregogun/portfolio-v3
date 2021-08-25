@@ -23,7 +23,7 @@ export const ThemeToggle = ({ children }) => {
   if (!mounted) return null;
 
   const toggleTheme = () => {
-    const targetTheme = resolvedTheme === 'light' ? 'dark' : 'light';
+    const targetTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
 
     setTheme(targetTheme);
   };
