@@ -15,17 +15,17 @@ const toggleButton = css({
 });
 
 export const ThemeToggle = ({ children }) => {
-  const [mounted, setMounted] = useState(false);
-  const { setTheme, resolvedTheme } = useTheme();
+  // **Leaving comments till checks in production have passed**
 
-  useEffect(() => setMounted(true), []);
+  // const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  if (!mounted) return null;
+  // useEffect(() => setMounted(true), []);
+
+  // if (!mounted) return null;
 
   const toggleTheme = () => {
-    const targetTheme = resolvedTheme === 'dark' ? 'light' : 'dark';
-
-    setTheme(targetTheme);
+    theme === 'dark' ? setTheme('light') : setTheme('dark');
   };
 
   return (
