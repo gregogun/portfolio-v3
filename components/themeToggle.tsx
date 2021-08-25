@@ -5,7 +5,8 @@ import { css } from 'stitches.config';
 const toggleButton = css({
   borderRadius: '4px',
   background: 'transparent',
-  padding: '1rem',
+  width: '48px',
+  height: '48px',
   border: 0,
   cursor: 'pointer',
   '&:hover': {

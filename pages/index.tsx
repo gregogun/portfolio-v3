@@ -11,7 +11,7 @@ import Twitch from '@/components/icons/twitch';
 const ThemeToggleButton = () => {
   return (
     <ThemeToggle>
-      <Sun size="32px" />
+      <Sun size="24px" />
     </ThemeToggle>
   );
 };
