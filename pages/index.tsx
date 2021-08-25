@@ -1,7 +1,7 @@
 import { Logo, Sun } from 'components/icons';
 import { ThemeToggle } from 'components/themeToggle';
 import { text } from 'styles/text';
-import { css, styled } from 'stitches.config';
+import { styled } from 'stitches.config';
 import Github from '@/components/icons/github';
 import Linkedin from '@/components/icons/linkedin';
 import Twitter from '@/components/icons/twitter';
@@ -52,7 +52,7 @@ const Link = ({ children, href, isExternal = false }) => {
 const ThemeToggleButton = () => {
   return (
     <ThemeToggle>
-      <Sun size="24px" />
+      <Sun color="var(--colors-secondary)" size="24px" />
     </ThemeToggle>
   );
 };
@@ -62,38 +62,30 @@ const Socials = () => {
     <List>
       <ListItem>
         <Link href={github.href} isExternal>
-          <Github width="24px" />
+          <Github color="var(--colors-secondary)" width="24px" />
         </Link>
       </ListItem>
       <ListItem>
         <Link href={linkedin.href} isExternal>
-          <Linkedin width="24px" />
+          <Linkedin color="var(--colors-secondary)" width="24px" />
         </Link>
       </ListItem>
       <ListItem>
         <Link href={twitter.href} isExternal>
-          <Twitter width="24px" />
+          <Twitter color="var(--colors-secondary)" width="24px" />
         </Link>
       </ListItem>
       <ListItem>
         <Link href={youtube.href} isExternal>
-          <Youtube width="24px" />
+          <Youtube color="var(--colors-secondary)" width="24px" />
         </Link>
       </ListItem>
       <ListItem>
         <Link href={twitch.href} isExternal>
-          <Twitch width="24px" />
+          <Twitch color="var(--colors-secondary)" width="24px" />
         </Link>
       </ListItem>
     </List>
-  );
-};
-
-const SocialLink = ({ icon, href }) => {
-  return (
-    <ListItem>
-      <Link href={href}>{icon}</Link>
-    </ListItem>
   );
 };
 
@@ -132,7 +124,6 @@ export default function Home() {
         className={text({
           css: {
             marginBottom: '32px'
-            // color: '$secondary'
           },
           weight: 'semibold',
           size: 'xl'
