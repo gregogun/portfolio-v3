@@ -1,7 +1,8 @@
 import { Logo, Sun } from 'components/icons';
 import { ThemeToggle } from 'components/themeToggle';
 import { text } from 'styles/text';
-import { css, styled } from 'stitches.config';
+import { styled } from 'stitches.config';
+import Head from 'next/head';
 import Github from '@/components/icons/github';
 import Linkedin from '@/components/icons/linkedin';
 import Twitter from '@/components/icons/twitter';
@@ -40,6 +41,32 @@ const List = styled('ul', {
   justifyContent: 'space-between',
   width: '248px'
 });
+
+const Seo = ({ ...customMeta }) => {
+  const meta = {
+    title: 'Greg Ogun',
+    description:
+      'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
+    image: 'https://gregogun.com/static/images/banner.png',
+    type: 'website',
+    ...customMeta
+  };
+
+  return (
+    <Head>
+      <title>{meta.title}</title>
+      <meta content={meta.description} name="description" />
+      <meta property="og:type" content={meta.type} />
+      <meta property="og:site_name" content="Greg Ogun" />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:title" content={meta.title} />
+      <meta name="twitter:site" content="@gregogun" />
+      <meta name="twitter:title" content={meta.title} />
+      <meta name="twitter:description" content={meta.description} />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+  );
+};
 
 const Link = ({ children, href, isExternal = false }) => {
   return (
@@ -100,6 +127,7 @@ const SocialLink = ({ icon, href }) => {
 export default function Home() {
   return (
     <Container>
+      <Seo />
       <Navbar>
         <Logo size="40px" />
         <ThemeToggleButton />
