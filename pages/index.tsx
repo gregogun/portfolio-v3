@@ -7,14 +7,7 @@ import Linkedin from '@/components/icons/linkedin';
 import Twitter from '@/components/icons/twitter';
 import Youtube from '@/components/icons/youtube';
 import Twitch from '@/components/icons/twitch';
-
-const ThemeToggleButton = () => {
-  return (
-    <ThemeToggle>
-      <Sun size="24px" />
-    </ThemeToggle>
-  );
-};
+import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 
 const Container = styled('div', {
   boxSizing: 'border-box',
@@ -48,25 +41,59 @@ const List = styled('ul', {
   width: '248px'
 });
 
-const SocialIcons = () => {
+const Link = ({ children, href, isExternal = false }) => {
+  return (
+    <a href={href} rel="noreferrer noopener" target={isExternal && '_blank'}>
+      {children}
+    </a>
+  );
+};
+
+const ThemeToggleButton = () => {
+  return (
+    <ThemeToggle>
+      <Sun size="24px" />
+    </ThemeToggle>
+  );
+};
+
+const Socials = () => {
   return (
     <List>
       <ListItem>
-        <Github width="24px" />
+        <Link href={github.href} isExternal>
+          <Github width="24px" />
+        </Link>
       </ListItem>
       <ListItem>
-        <Linkedin width="24px" />
+        <Link href={linkedin.href} isExternal>
+          <Linkedin width="24px" />
+        </Link>
       </ListItem>
       <ListItem>
-        <Twitter width="24px" />
+        <Link href={twitter.href} isExternal>
+          <Twitter width="24px" />
+        </Link>
       </ListItem>
       <ListItem>
-        <Youtube width="24px" />
+        <Link href={youtube.href} isExternal>
+          <Youtube width="24px" />
+        </Link>
       </ListItem>
       <ListItem>
-        <Twitch width="24px" />
+        <Link href={twitch.href} isExternal>
+          <Twitch width="24px" />
+        </Link>
       </ListItem>
     </List>
+  );
+};
+
+const SocialLink = ({ icon, href }) => {
+  return (
+    <ListItem>
+      <Link href={href}>{icon}</Link>
+    </ListItem>
   );
 };
 
@@ -80,7 +107,7 @@ export default function Home() {
       <h1
         className={text({
           css: {
-            fontFamily: 'Poppins, apple-system, Verdana, sans-serif',
+            fontFamily: '$heading',
             marginBottom: '40px'
           },
           size: '4xl',
@@ -93,9 +120,10 @@ export default function Home() {
         className={text({
           css: {
             marginBottom: '4px',
-            color: '#888888',
+            color: '$tertiary',
             fontStyle: 'italic'
-          }
+          },
+          size: 'md'
         })}
       >
         noun
@@ -103,11 +131,11 @@ export default function Home() {
       <p
         className={text({
           css: {
-            marginBottom: '32px',
-            color: '$secondary',
-            fontSize: '24px'
+            marginBottom: '32px'
+            // color: '$secondary'
           },
-          weight: 'semibold'
+          weight: 'semibold',
+          size: 'xl'
         })}
       >
         developer, designer, writer, and big time tea drinker.
@@ -130,7 +158,7 @@ export default function Home() {
       >
         whilst you're here, feel free to sign my digital guestbook.
       </p>
-      <SocialIcons />
+      <Socials />
     </Container>
   );
 }
