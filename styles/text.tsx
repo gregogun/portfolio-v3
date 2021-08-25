@@ -2,11 +2,18 @@ import { css } from '../stitches.config';
 
 export const text = css({
   boxSizing: 'border-box',
-  fontFamily: '$sans',
   lineHeight: 'inherit',
   margin: 0,
 
   variants: {
+    type: {
+      body: {
+        fontFamily: '$body'
+      },
+      heading: {
+        fontFamily: '$heading'
+      }
+    },
     size: {
       xs: {
         fontSize: '14px',
@@ -63,6 +70,7 @@ export const text = css({
 
   defaultVariants: {
     size: 'md',
-    weight: 'regular'
+    weight: 'regular',
+    type: 'body'
   }
 });

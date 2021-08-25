@@ -21,7 +21,8 @@ export const stitchesConfig = createCss({
       accent: '$neutral100'
     },
     fonts: {
-      sans: 'Inter, apple-system, Verdana, sans-serif'
+      body: 'Inter, apple-system, Verdana, sans-serif',
+      heading: 'Poppins, apple-system, Verdana, sans-serif'
     },
     space: {
       1: '4px',
