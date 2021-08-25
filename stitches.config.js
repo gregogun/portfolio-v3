@@ -61,6 +61,14 @@ export const darkTheme = stitchesConfig.theme('dark-theme', {
 });
 
 export const globalStyles = stitchesConfig.global({
+  body: {
+    backgroundColor: '$primary',
+    color: '$secondary',
+    fontFamily: '$body',
+    margin: 0
+  },
+  svg: { display: 'inline-block', verticalAlign: 'middle' },
+
   '@dark': {
     // notice the `media` definition on the stitches.config.ts file
     ':root:not(.light)': {
