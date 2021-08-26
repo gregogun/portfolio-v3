@@ -9,6 +9,7 @@ import Twitter from '@/components/icons/twitter';
 import Youtube from '@/components/icons/youtube';
 import Twitch from '@/components/icons/twitch';
 import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
+import { link } from '@/styles/link';
 
 const Container = styled('div', {
   //boxSizing: 'border-box',
@@ -186,7 +187,10 @@ export default function Home() {
           }
         })}
       >
-        whilst you're here, feel free to sign my digital guestbook.
+        whilst you're here, feel free to{' '}
+        <a className={link()} href={github.href}>
+          sign my digital guestbook.
+        </a>
       </p>
       <Socials />
     </Container>
