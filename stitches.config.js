@@ -1,6 +1,8 @@
 import { createCss } from '@stitches/react';
 
 export const stitchesConfig = createCss({
+  // DEFAULT THEME
+
   theme: {
     colors: {
       // color tokens
@@ -51,6 +53,8 @@ export const stitchesConfig = createCss({
   }
 });
 
+// DARK THEME
+
 export const darkTheme = stitchesConfig.theme('dark-theme', {
   colors: {
     primary: '$black',
@@ -60,12 +64,36 @@ export const darkTheme = stitchesConfig.theme('dark-theme', {
   }
 });
 
+// GLOBAL STYLES
+
 export const globalStyles = stitchesConfig.global({
+  // Makes every element inherit box-sizing from the body
+  '*, *::before, *::after': {
+    boxSizing: 'inherit'
+  },
+  html: {
+    minWidth: '360px',
+    scrollBehavior: 'smooth',
+    overflowX: 'hidden'
+  },
   body: {
-    backgroundColor: '$primary',
+    boxSizing: 'border-box',
+    //backgroundColor: '$primary',
     color: '$secondary',
     fontFamily: '$body',
-    margin: 0
+    margin: 0,
+    // dotted background
+    backgroundColor: '$primary',
+    backgroundImage: 'radial-gradient($accent 0.5px, transparent 1px)',
+    backgroundSize: '100px 100px'
+  },
+  '::selection': {
+    backgroundColor: '$secondary',
+    color: '$primary'
+  },
+  '*:focus': {
+    outline: '1px dashed $secondary',
+    outlineOffset: '1px'
   },
   svg: { display: 'inline-block', verticalAlign: 'middle' },
 
@@ -86,22 +114,24 @@ export const globalStyles = stitchesConfig.global({
       }, {})
     }
   },
-  '@font-face': {
-    fontFamily: 'Inter',
-    // fontStyle: 'normal',
-    fontWeight: '400 600 ',
-    fontDisplay: 'optional',
-    src: 'local("Inter") url(/fonts/inter-var-latin.woff2) format("woff2")',
-    unicodeRange: `U+000-5FF`
-  },
-  '@font-face': {
-    fontFamily: 'Poppins',
-    fontStyle: 'normal',
-    fontWeight: 600,
-    fontDisplay: 'optional',
-    src: 'local("Poppins") url(/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
-    unicodeRange: `U+000-5FF`
-  }
+  '@font-face': [
+    {
+      fontFamily: 'Inter',
+      // fontStyle: 'normal',
+      fontWeight: '400 600 ',
+      fontDisplay: 'optional',
+      src: 'local("Inter") url(/fonts/inter-var-latin.woff2) format("woff2")',
+      unicodeRange: `U+000-5FF`
+    },
+    {
+      fontFamily: 'Poppins',
+      fontStyle: 'normal',
+      fontWeight: 600,
+      fontDisplay: 'optional',
+      src: 'local("Poppins") url(/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
+      unicodeRange: `U+000-5FF`
+    }
+  ]
 });
 
 globalStyles();

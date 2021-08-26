@@ -11,16 +11,18 @@ import Twitch from '@/components/icons/twitch';
 import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 
 const Container = styled('div', {
-  boxSizing: 'border-box',
+  //boxSizing: 'border-box',
   width: '100%',
   maxWidth: '768px',
-  margin: 'auto'
+  margin: 'auto',
+  padding: '$2',
+  borderRadius: '$md'
 });
 
 const Navbar = styled('div', {
   marginTop: '64px',
   height: '64px',
-  boxSizing: 'border-box',
+  // boxSizing: 'border-box',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
