@@ -120,7 +120,7 @@ export const globalStyles = stitchesConfig.global({
       // fontStyle: 'normal',
       fontWeight: '400 600 ',
       fontDisplay: 'optional',
-      src: 'local("Inter") url(/fonts/inter-var-latin.woff2) format("woff2")',
+      src: 'local("Inter") url(/static/fonts/inter-var-latin.woff2) format("woff2")',
       unicodeRange: `U+000-5FF`
     },
     {
@@ -128,7 +128,7 @@ export const globalStyles = stitchesConfig.global({
       fontStyle: 'normal',
       fontWeight: 600,
       fontDisplay: 'optional',
-      src: 'local("Poppins") url(/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
+      src: 'local("Poppins") url(/static/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
       unicodeRange: `U+000-5FF`
     }
   ]

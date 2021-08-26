@@ -13,14 +13,14 @@ export default class Document extends NextDocument {
           />
           <link
             rel="preload"
-            href="/fonts/inter-var-latin.woff2"
+            href="/static/fonts/inter-var-latin.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/fonts/poppins-v15-latin-600.woff2"
+            href="/static/fonts/poppins-v15-latin-600.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
