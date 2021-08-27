@@ -5,8 +5,7 @@ export const stitchesConfig = createCss({
 
   theme: {
     colors: {
-      // color tokens
-      //neutrals
+      // --- NEUTRALS ---
       black: '#161616',
       white: '#fefefe',
       neutral50: '#fcfcfc',
@@ -16,7 +15,7 @@ export const stitchesConfig = createCss({
       neutral400: '#555555',
       neutral500: '#2f2f2f',
 
-      // semantic tokens
+      // --- SEMANTIC TOKENS ---
       primary: '$white',
       secondary: '$black',
       tertiary: '$neutral400',
@@ -53,7 +52,7 @@ export const stitchesConfig = createCss({
   }
 });
 
-// DARK THEME
+// --- DARK THEME ---
 
 export const darkTheme = stitchesConfig.theme('dark-theme', {
   colors: {
@@ -64,7 +63,7 @@ export const darkTheme = stitchesConfig.theme('dark-theme', {
   }
 });
 
-// GLOBAL STYLES
+// --- GLOBAL STYLES ---
 
 export const globalStyles = stitchesConfig.global({
   // Makes every element inherit box-sizing from the body
@@ -113,8 +112,8 @@ export const globalStyles = stitchesConfig.global({
   '@font-face': [
     {
       fontFamily: 'Inter',
-      // fontStyle: 'normal',
-      fontWeight: '400 600 ',
+      fontStyle: 'normal',
+      fontWeight: '400 600',
       fontDisplay: 'optional',
       src: 'local("Inter") url(/static/fonts/inter-var-latin.woff2) format("woff2")',
       unicodeRange: `U+000-5FF`

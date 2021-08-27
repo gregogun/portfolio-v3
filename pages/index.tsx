@@ -2,19 +2,13 @@ import * as React from 'react';
 import { Logo, Sun } from 'components/icons';
 import { ThemeToggle } from 'components/themeToggle';
 import { text } from 'styles/text';
-import { css, styled } from 'stitches.config';
+import { styled } from 'stitches.config';
 import Head from 'next/head';
-import Github from '@/components/icons/github';
-import Linkedin from '@/components/icons/linkedin';
-import Twitter from '@/components/icons/twitter';
-import Youtube from '@/components/icons/youtube';
-import Twitch from '@/components/icons/twitch';
 import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 import { link } from '@/styles/link';
 import { icon } from '@/styles/icon';
 
 export const Container = styled('div', {
-  //boxSizing: 'border-box',
   width: '100%',
   maxWidth: '768px',
   margin: 'auto',
@@ -25,7 +19,6 @@ export const Container = styled('div', {
 const Navbar = styled('nav', {
   marginTop: '64px',
   height: '64px',
-  // boxSizing: 'border-box',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
@@ -221,7 +214,6 @@ export default function Home() {
           className={text({
             css: {
               marginBottom: '32px'
-              // color: '$secondary'
             },
             weight: 'semibold',
             size: 'xl'
