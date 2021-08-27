@@ -85,7 +85,7 @@ export const globalStyles = stitchesConfig.global({
     // dotted background
     backgroundColor: '$primary',
     backgroundImage: 'radial-gradient($accent 0.5px, transparent 1px)',
-    backgroundSize: '100px 100px'
+    backgroundSize: '75px 75px'
   },
   '::selection': {
     backgroundColor: '$secondary',
