@@ -28,8 +28,14 @@ export const ThemeToggle = ({ children }) => {
     theme === 'dark' ? setTheme('light') : setTheme('dark');
   };
 
+  const mode = theme === 'dark' ? 'light' : 'dark';
+
   return (
-    <button className={toggleButton()} onClick={toggleTheme}>
+    <button
+      aria-label={`Activate ${mode} mode`}
+      className={toggleButton()}
+      onClick={toggleTheme}
+    >
       {children}
     </button>
   );
