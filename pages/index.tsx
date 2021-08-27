@@ -1,7 +1,8 @@
+import * as React from 'react';
 import { Logo, Sun } from 'components/icons';
 import { ThemeToggle } from 'components/themeToggle';
 import { text } from 'styles/text';
-import { styled } from 'stitches.config';
+import { css, styled } from 'stitches.config';
 import Head from 'next/head';
 import Github from '@/components/icons/github';
 import Linkedin from '@/components/icons/linkedin';
@@ -10,6 +11,7 @@ import Youtube from '@/components/icons/youtube';
 import Twitch from '@/components/icons/twitch';
 import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 import { link } from '@/styles/link';
+import { icon } from '@/styles/icon';
 
 export const Container = styled('div', {
   //boxSizing: 'border-box',
@@ -45,6 +47,18 @@ const List = styled('ul', {
   width: '248px'
 });
 
+const VisuallyHidden = styled('span', {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap' /* added line */,
+  border: 0
+});
+
 const Seo = ({ ...customMeta }) => {
   const meta = {
     title: 'Greg Ogun',
@@ -73,9 +87,43 @@ const Seo = ({ ...customMeta }) => {
 
 const Link = ({ children, href, isExternal = false }) => {
   return (
-    <a href={href} rel="noreferrer noopener" target={isExternal && '_blank'}>
+    <a
+      href={href}
+      rel="noreferrer noopener"
+      target={isExternal ? '_blank' : undefined}
+    >
       {children}
     </a>
+  );
+};
+
+// COMMENTING OUT UNTIL TYPINGS ARE DONE FOR SVG ICONS
+
+// type IconProps = {
+//   children?: never;
+//   color?: string;
+// }
+
+// type IconLinkProps = {
+//   Icon: IconProps;
+//   href: string;
+//   title?: string;
+// };
+
+const IconLink = ({ Icon, href, title = null, color = null, ...props }) => {
+  return (
+    <Link href={href} isExternal {...props}>
+      <Icon
+        className={icon({
+          css: {
+            '&:hover': { fill: color, transform: 'translateY(-2px)' }
+          }
+        })}
+        aria-hidden="true"
+        focusable="false"
+      />
+      <VisuallyHidden>{title}</VisuallyHidden>
+    </Link>
   );
 };
 
@@ -91,39 +139,46 @@ const Socials = () => {
   return (
     <List>
       <ListItem>
-        <Link href={github.href} isExternal>
-          <Github width="24px" />
-        </Link>
+        <IconLink
+          Icon={github.icon}
+          href={github.href}
+          title={github.name}
+          color={github.color}
+        />
       </ListItem>
       <ListItem>
-        <Link href={linkedin.href} isExternal>
-          <Linkedin width="24px" />
-        </Link>
+        <IconLink
+          Icon={linkedin.icon}
+          href={linkedin.href}
+          title={linkedin.name}
+          color={linkedin.color}
+        />
       </ListItem>
       <ListItem>
-        <Link href={twitter.href} isExternal>
-          <Twitter width="24px" />
-        </Link>
+        <IconLink
+          Icon={twitter.icon}
+          href={twitter.href}
+          title={twitter.name}
+          color={twitter.color}
+        />
       </ListItem>
       <ListItem>
-        <Link href={youtube.href} isExternal>
-          <Youtube width="24px" />
-        </Link>
+        <IconLink
+          Icon={youtube.icon}
+          href={youtube.href}
+          title={youtube.name}
+          color={youtube.color}
+        />
       </ListItem>
       <ListItem>
-        <Link href={twitch.href} isExternal>
-          <Twitch width="24px" />
-        </Link>
+        <IconLink
+          Icon={twitch.icon}
+          href={twitch.href}
+          title={twitch.name}
+          color={twitch.color}
+        />
       </ListItem>
     </List>
-  );
-};
-
-const SocialLink = ({ icon, href }) => {
-  return (
-    <ListItem>
-      <Link href={href}>{icon}</Link>
-    </ListItem>
   );
 };
 
