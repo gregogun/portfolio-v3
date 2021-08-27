@@ -11,7 +11,7 @@ import Twitch from '@/components/icons/twitch';
 import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 import { link } from '@/styles/link';
 
-const Container = styled('div', {
+export const Container = styled('div', {
   //boxSizing: 'border-box',
   width: '100%',
   maxWidth: '768px',
