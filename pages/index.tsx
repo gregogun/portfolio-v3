@@ -20,7 +20,7 @@ export const Container = styled('div', {
   borderRadius: '$md'
 });
 
-const Navbar = styled('div', {
+const Navbar = styled('nav', {
   marginTop: '64px',
   height: '64px',
   // boxSizing: 'border-box',
@@ -131,68 +131,74 @@ export default function Home() {
   return (
     <Container>
       <Seo />
-      <Navbar>
-        <Logo size="40px" />
-        <ThemeToggleButton />
-      </Navbar>
-      <h1
-        className={text({
-          css: {
-            fontFamily: '$heading',
-            marginBottom: '40px'
-          },
-          size: '4xl',
-          weight: 'semibold'
-        })}
-      >
-        Greg Ogun
-      </h1>
-      <p
-        className={text({
-          css: {
-            marginBottom: '4px',
-            color: '$tertiary',
-            fontStyle: 'italic'
-          },
-          size: 'md'
-        })}
-      >
-        noun
-      </p>
-      <p
-        className={text({
-          css: {
-            marginBottom: '32px'
-            // color: '$secondary'
-          },
-          weight: 'semibold',
-          size: 'xl'
-        })}
-      >
-        developer, designer, writer, and big time tea drinker.
-      </p>
-      <p
-        className={text({
-          css: {
-            marginBottom: '32px'
-          }
-        })}
-      >
-        welcome to my internet home.
-      </p>
-      <p
-        className={text({
-          css: {
-            marginBottom: '64px'
-          }
-        })}
-      >
-        whilst you're here, feel free to{' '}
-        <a className={link()} href={github.href}>
-          sign my digital guestbook.
-        </a>
-      </p>
-      <Socials />
+      <header>
+        <Navbar>
+          <Logo size="40px" />
+          <ThemeToggleButton />
+        </Navbar>
+      </header>
+      <main>
+        <h1
+          className={text({
+            css: {
+              fontFamily: '$heading',
+              marginBottom: '40px'
+            },
+            size: '4xl',
+            weight: 'semibold'
+          })}
+        >
+          Greg Ogun
+        </h1>
+        <p
+          className={text({
+            css: {
+              marginBottom: '4px',
+              color: '$tertiary',
+              fontStyle: 'italic'
+            },
+            size: 'md'
+          })}
+        >
+          noun
+        </p>
+        <p
+          className={text({
+            css: {
+              marginBottom: '32px'
+              // color: '$secondary'
+            },
+            weight: 'semibold',
+            size: 'xl'
+          })}
+        >
+          developer, designer, writer, and big time tea drinker.
+        </p>
+        <p
+          className={text({
+            css: {
+              marginBottom: '32px'
+            }
+          })}
+        >
+          welcome to my internet home.
+        </p>
+        <p
+          className={text({
+            css: {
+              marginBottom: '64px'
+            }
+          })}
+        >
+          whilst you're here, feel free to{' '}
+          <a className={link()} href={github.href}>
+            sign my digital guestbook.
+          </a>
+        </p>
+        <footer>
+          <Socials />
+        </footer>
+      </main>
     </Container>
   );
 }
