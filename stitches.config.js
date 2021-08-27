@@ -78,14 +78,10 @@ export const globalStyles = stitchesConfig.global({
   },
   body: {
     boxSizing: 'border-box',
-    //backgroundColor: '$primary',
+    backgroundColor: '$primary',
     color: '$secondary',
     fontFamily: '$body',
-    margin: 0,
-    // dotted background
-    backgroundColor: '$primary',
-    backgroundImage: 'radial-gradient($accent 0.5px, transparent 1px)',
-    backgroundSize: '75px 75px'
+    margin: 0
   },
   '::selection': {
     backgroundColor: '$secondary',
