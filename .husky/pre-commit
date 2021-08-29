@@ -3,22 +3,8 @@
 
 echo 'Styling, testing and building your project before comitting 💅🔨'
 
-# Run linter and fix any issues that can be fixed
-npm run pre-commit 
+# run ts checks
+npm run check-types
 
-# Check tsconfig standards
-npm run check-types || 
-(
-  echo 'Failed type check. Fix errors listed above 👍'
-  false;
-)
-
-# Check prettier standards
-npm run check-format || 
-(
-  echo 'Prettier check failed. Try npm run format, add the changes and commit again 👍'
-  false;
-)
-
-# If it builds we can commit
-echo 'All checks have passed ✅ committing...'
+# run lint staged
+yarn lint-staged
