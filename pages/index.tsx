@@ -237,7 +237,7 @@ export default function Home() {
             }
           })}
         >
-          whilst you're here, feel free to{' '}
+          whilst {" you're "} here, feel free to{' '}
           <a className={link()} href={github.href}>
             sign my digital guestbook.
           </a>
