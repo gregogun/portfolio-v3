@@ -1,4 +1,4 @@
-import { Container } from 'pages';
+import Container from 'components/container';
 import Link from 'next/link';
 import { link } from '@/styles/link';
 
