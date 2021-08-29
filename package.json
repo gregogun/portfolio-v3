@@ -8,11 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "pre-commit": "npm run lint",
+    "pre-commit": "npm run lint --fix && git add -A .",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "format": "prettier --write"
+    "format": "prettier --write \"**/*.{html,js,jsx,json,md,mdx,yml}\""
   },
   "dependencies": {
     "@stitches/react": "^0.2.5",
