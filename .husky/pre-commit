@@ -23,6 +23,7 @@ echo 'All looks good! Time to try a build...'
 npm run build || 
 (
   echo 'Next build failed: See above errors.'
+  false;
 )
 
 # If it builds we can commit
