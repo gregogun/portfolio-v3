@@ -20,14 +20,5 @@ npm run check-format ||
   false;
 )
 
-# If all passes, try to run a build
-echo 'All looks good! Time to try a build...'
-
-npm run build || 
-(
-  echo 'Next build failed: See above errors.'
-  false;
-)
-
 # If it builds we can commit
 echo 'All checks have passed ✅ committing...'
