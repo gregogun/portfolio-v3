@@ -12,7 +12,9 @@ export default function NotFound() {
         paddingTop: '$7'
       }}
     >
-      <h1>It seems you've lost your way traveller. Let us guide you home.</h1>
+      <h1>
+        It seems {" you've "} lost your way traveller. Let us guide you home.
+      </h1>
       <Link href="/">
         <a className={link()}>Take me home, website gods.</a>
       </Link>
