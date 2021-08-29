@@ -3,6 +3,9 @@
 
 echo 'Styling, testing and building your project before comitting 💅🔨'
 
+# Run linter and fix any issues that can be fixed
+npm run pre-commit 
+
 # Check tsconfig standards
 npm run check-types || 
 (
@@ -17,7 +20,7 @@ npm run check-format ||
   false;
 )
 
-#If all passes, try to run a build
+# If all passes, try to run a build
 echo 'All looks good! Time to try a build...'
 
 npm run build || 
