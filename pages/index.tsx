@@ -12,12 +12,11 @@ export const Container = styled('div', {
   width: '100%',
   maxWidth: '768px',
   margin: 'auto',
-  padding: '$2',
+  padding: '$3',
   borderRadius: '$md'
 });
 
 const Navbar = styled('nav', {
-  marginTop: '64px',
   height: '64px',
   display: 'flex',
   alignItems: 'center',
@@ -177,7 +176,13 @@ const Socials = () => {
 
 export default function Home() {
   return (
-    <Container>
+    <Container
+      css={{
+        '@bp3': {
+          mt: '64px'
+        }
+      }}
+    >
       <Seo />
       <header>
         <Navbar>
@@ -189,34 +194,26 @@ export default function Home() {
         <h1
           className={text({
             css: {
+              '@bp3': {
+                size: '4xl'
+              },
               fontFamily: '$heading',
-              marginBottom: '40px'
+              marginBottom: '64px'
             },
-            size: '4xl',
+            size: '3xl',
             weight: 'semibold'
           })}
         >
           Greg Ogun
         </h1>
-        <p
-          className={text({
-            css: {
-              marginBottom: '4px',
-              color: '$tertiary',
-              fontStyle: 'italic'
-            },
-            size: 'md'
-          })}
-        >
-          noun
-        </p>
+
         <p
           className={text({
             css: {
               marginBottom: '32px'
             },
             weight: 'semibold',
-            size: 'xl'
+            size: 'lg'
           })}
         >
           developer, designer, writer, and big time tea drinker.

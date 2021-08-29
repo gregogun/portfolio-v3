@@ -55,11 +55,11 @@ export const text = css({
     weight: {
       bold: {
         fontStyle: 'normal',
-        fontWeight: '600'
+        fontWeight: '700'
       },
       semibold: {
         fontStyle: 'normal',
-        fontWeight: '500'
+        fontWeight: '600'
       },
       regular: {
         fontStyle: 'normal',

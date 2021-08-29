@@ -35,6 +35,23 @@ export const stitchesConfig = createCss({
       7: '256px',
       8: '512px'
     },
+    sizes: {
+      max: 'max-content',
+      min: 'min-content',
+      full: '100%',
+      xs: '0.125rem',
+      sm: '0.5rem',
+      md: '1rem',
+      lg: '1.5rem',
+      xl: '2rem',
+      '2xl': '2.5rem',
+      '3xl': '3rem',
+      '4xl': '4rem',
+      '5xl': '5rem',
+      '6xl': '6rem',
+      '7xl': '8rem',
+      '8xl': '16rem'
+    },
     radii: {
       xs: '2px',
       sm: '4px',
@@ -130,6 +147,17 @@ export const stitchesConfig = createCss({
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
         marginTop: value,
         marginBottom: value
+      }),
+    boxSize:
+      (config) =>
+      (value: keyof typeof config.theme['sizes'] | number | (string & {})) => ({
+        width: value,
+        height: value
+      }),
+    bc:
+      (config) =>
+      (value: keyof typeof config.theme['colors'] | (string & {})) => ({
+        backgroundColor: value
       })
   }
 });
@@ -174,7 +202,7 @@ export const globalStyles = stitchesConfig.global({
   },
   svg: { display: 'inline-block', verticalAlign: 'middle' },
 
-  // COMMENTING OUT TILL CHECK IN PROD
+  // COMMENTING OUT TILL CHECKS IN PROD
 
   // '@dark': {
   //   // notice the `media` definition on the stitches.config.ts file
