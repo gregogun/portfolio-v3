@@ -1,0 +1,29 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Styling, testing and building your project before comitting 💅🔨'
+
+# Check tsconfig standards
+npm run check-types || 
+(
+  echo 'Failed type check. Fix errors listed above 👍'
+  false;
+)
+
+# Check prettier standards
+npm run check-format || 
+(
+  echo 'Prettier check failed. Try npm run format, add the changes and commit again 👍'
+  false;
+)
+
+#If all passes, try to run a build
+echo 'All looks good! Time to try a build...'
+
+npm run build || 
+(
+  echo 'Next build failed: See above errors.'
+)
+
+# If it builds we can commit
+echo 'All checks have passed ✅ committing...'
