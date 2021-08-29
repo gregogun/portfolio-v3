@@ -6,9 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "prepare": "husky install",
-    "pre-commit": "npm run lint --fix && git add -A .",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
@@ -41,7 +40,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run eslint",
+      "npm run check-lint",
       "npm run prettier --write",
       "npm run test --findRelatedTests --bail"
     ]
