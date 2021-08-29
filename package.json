@@ -41,7 +41,7 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "npm run check-lint",
-      "npm run prettier --write",
+      "npm run format",
       "npm run test --findRelatedTests --bail"
     ]
   }
