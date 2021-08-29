@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Styling, testing and building your project before comitting 💅🔨'
+
+# run ts checks
+npm run check-types
+
+# run lint staged
+yarn lint-staged

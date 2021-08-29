@@ -1,29 +1,10 @@
 import * as React from 'react';
-import { Logo, Sun } from 'components/icons';
-import { ThemeToggle } from 'components/themeToggle';
 import { text } from 'styles/text';
 import { styled } from 'stitches.config';
-import Head from 'next/head';
 import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 import { link } from '@/styles/link';
 import { icon } from '@/styles/icon';
-
-export const Container = styled('div', {
-  width: '100%',
-  maxWidth: '768px',
-  margin: 'auto',
-  padding: '$2',
-  borderRadius: '$md'
-});
-
-const Navbar = styled('nav', {
-  marginTop: '64px',
-  height: '64px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginBottom: '64px'
-});
+import Container from '@/components/container';
 
 const ListItem = styled('li', {
   listStyle: 'none'
@@ -51,32 +32,6 @@ const VisuallyHidden = styled('span', {
   whiteSpace: 'nowrap' /* added line */,
   border: 0
 });
-
-const Seo = ({ ...customMeta }) => {
-  const meta = {
-    title: 'Greg Ogun',
-    description:
-      'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
-    image: 'https://gregogun.com/static/images/banner.png',
-    type: 'website',
-    ...customMeta
-  };
-
-  return (
-    <Head>
-      <title>{meta.title}</title>
-      <meta content={meta.description} name="description" />
-      <meta property="og:type" content={meta.type} />
-      <meta property="og:site_name" content="Greg Ogun" />
-      <meta property="og:description" content={meta.description} />
-      <meta property="og:title" content={meta.title} />
-      <meta name="twitter:site" content="@gregogun" />
-      <meta name="twitter:title" content={meta.title} />
-      <meta name="twitter:description" content={meta.description} />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-  );
-};
 
 const Link = ({ children, href, isExternal = false }) => {
   return (
@@ -117,14 +72,6 @@ const IconLink = ({ Icon, href, title = null, color = null, ...props }) => {
       />
       <VisuallyHidden>{title}</VisuallyHidden>
     </Link>
-  );
-};
-
-const ThemeToggleButton = () => {
-  return (
-    <ThemeToggle>
-      <Sun size="24px" />
-    </ThemeToggle>
   );
 };
 
@@ -177,75 +124,67 @@ const Socials = () => {
 
 export default function Home() {
   return (
-    <Container>
-      <Seo />
-      <header>
-        <Navbar>
-          <Logo size="40px" />
-          <ThemeToggleButton />
-        </Navbar>
-      </header>
-      <main>
-        <h1
-          className={text({
-            css: {
-              fontFamily: '$heading',
-              marginBottom: '40px'
+    <Container
+      css={{
+        '@bp2': {
+          p: '$4'
+        },
+        '@bp3': {
+          mt: '64px'
+        }
+      }}
+    >
+      <h1
+        className={text({
+          css: {
+            '@bp3': {
+              size: '4xl'
             },
-            size: '4xl',
-            weight: 'semibold'
-          })}
-        >
-          Greg Ogun
-        </h1>
-        <p
-          className={text({
-            css: {
-              marginBottom: '4px',
-              color: '$tertiary',
-              fontStyle: 'italic'
-            },
-            size: 'md'
-          })}
-        >
-          noun
-        </p>
-        <p
-          className={text({
-            css: {
-              marginBottom: '32px'
-            },
-            weight: 'semibold',
-            size: 'xl'
-          })}
-        >
-          developer, designer, writer, and big time tea drinker.
-        </p>
-        <p
-          className={text({
-            css: {
-              marginBottom: '32px'
-            }
-          })}
-        >
-          welcome to my internet home.
-        </p>
-        <p
-          className={text({
-            css: {
-              marginBottom: '64px'
-            }
-          })}
-        >
-          whilst you're here, feel free to{' '}
-          <a className={link()} href={github.href}>
-            sign my digital guestbook.
-          </a>
-        </p>
-        <footer>
-          <Socials />
-        </footer>
-      </main>
+            fontFamily: '$heading',
+            marginBottom: '64px'
+          },
+          size: '3xl',
+          weight: 'semibold'
+        })}
+      >
+        Greg Ogun
+      </h1>
+
+      <p
+        className={text({
+          css: {
+            marginBottom: '32px'
+          },
+          weight: 'semibold',
+          size: 'lg'
+        })}
+      >
+        developer, designer, writer, and big time tea drinker.
+      </p>
+      <p
+        className={text({
+          css: {
+            marginBottom: '32px'
+          }
+        })}
+      >
+        welcome to my internet home.
+      </p>
+      <p
+        className={text({
+          css: {
+            marginBottom: '64px'
+          }
+        })}
+      >
+        whilst {" you're "} here, feel free to{' '}
+        <a className={link()} href={github.href}>
+          sign my digital guestbook.
+        </a>
+      </p>
+      <footer>
+        <Socials />
+      </footer>
     </Container>
   );
 }

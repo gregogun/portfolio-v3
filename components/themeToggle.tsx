@@ -1,4 +1,5 @@
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { css } from 'stitches.config';
 
 const toggleButton = css({
@@ -15,6 +16,10 @@ const toggleButton = css({
 
 export const ThemeToggle = ({ children }) => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
 
   const toggleTheme = () => {
     theme === 'dark' ? setTheme('light') : setTheme('dark');
