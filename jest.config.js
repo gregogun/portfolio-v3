@@ -18,6 +18,7 @@ module.exports = {
     '<rootDir>/pages'
   ],
   testURL: `http://localhost`,
+  testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
