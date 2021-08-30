@@ -178,7 +178,7 @@ export default function Home() {
         })}
       >
         whilst {" you're "} here, feel free to{' '}
-        <a className={link()} href={github.href}>
+        <a className={link()} href="https://go-guestbook.vercel.app/">
           sign my digital guestbook.
         </a>
       </p>
