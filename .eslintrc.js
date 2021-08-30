@@ -3,17 +3,25 @@ module.exports = {
     'eslint:recommended',
     'next/core-web-vitals',
     'plugin:import/errors',
+    'plugin:import/typescript',
     'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:jest-dom/recommended',
     'prettier'
   ],
-  plugins: ['react', 'import', 'jsx-a11y', 'jest-dom', 'testing-library'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'import',
+    'jsx-a11y',
+    'jest-dom',
+    'testing-library'
+  ],
   rules: {
-    'no-console': 1,
-    'no-unused-vars': 1,
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 0,
+    'react/display-name': 0,
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
@@ -21,6 +29,42 @@ module.exports = {
         components: ['Link'],
         specialLink: ['hrefLeft', 'hrefRight'],
         aspects: ['invalidHref', 'preferButton']
+      }
+    ],
+    // may want to revise once becoming more comfortable with ts
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-member-accessibility': 0,
+    '@typescript-eslint/indent': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    // **temp>>>**
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/ban-types': 0,
+    // **<<<temp**
+    '@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        argsIgnorePattern: '^_'
+      }
+    ],
+    'no-console': [
+      2,
+      {
+        allow: ['warn', 'error']
+      }
+    ],
+    'import/no-extraneous-dependencies': [
+      2,
+      {
+        devDependencies: [
+          '**/setup.ts',
+          '**/*.test.tsx',
+          '**/*.spec.tsx',
+          '**/*.test.ts',
+          '**/*.spec.ts'
+        ]
       }
     ]
   },
@@ -41,6 +85,7 @@ module.exports = {
       version: 'detect'
     }
   },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
