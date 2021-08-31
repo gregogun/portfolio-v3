@@ -14,7 +14,7 @@
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "format": "prettier --write \"**/*.{html,js,jsx,json,mdx,yml}\""
+    "format": "prettier --write"
   },
   "dependencies": {
     "@stitches/react": "^0.2.5",
