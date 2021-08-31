@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@stitches/react": "^0.2.5",
+    "gray-matter": "^4.0.3",
+    "mdx-bundler": "^6.0.1",
     "next": "11.1.0",
     "next-themes": "0.0.15",
     "react": "17.0.2",

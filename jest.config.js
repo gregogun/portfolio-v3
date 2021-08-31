@@ -2,6 +2,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/components/$1',
     '^@/utils/(.*)$': '<rootDir>/utils/$1',
+    '^@/lib/(.*)$': '<rootDir>/lib/$1',
     '^@/data/(.*)$': '<rootDir>/data/$1',
     '^@/styles/(.*)$': '<rootDir>/styles/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1'
