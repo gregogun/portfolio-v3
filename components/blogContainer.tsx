@@ -1,5 +1,18 @@
+import { link } from '@/styles/link';
 import { text } from '@/styles/text';
+import { css, styled } from 'stitches.config';
 import Container from './container';
+
+const Article = styled('article', {
+  mb: '32px'
+});
+
+const line = css({
+  mb: '32px',
+  border: 0,
+  height: '2px',
+  backgroundImage: 'linear-gradient(to right, $primary, $accent, $primary)'
+});
 
 export default function BlogContainer({ children, frontmatter }) {
   return (
@@ -9,7 +22,7 @@ export default function BlogContainer({ children, frontmatter }) {
       // date={new Date(frontmatter.publishedAt).toISOString()}
       type="article"
     >
-      <article>
+      <Article>
         <h1
           className={text({
             css: {
@@ -17,7 +30,7 @@ export default function BlogContainer({ children, frontmatter }) {
                 size: '4xl'
               },
               fontFamily: '$heading',
-              marginBottom: '32px'
+              marginBottom: '8px'
             },
             size: '3xl',
             weight: 'semibold'
@@ -26,7 +39,14 @@ export default function BlogContainer({ children, frontmatter }) {
           {frontmatter.title}
         </h1>
         {children}
-      </article>
+      </Article>
+      <hr className={line()} />
+      <a
+        className={link()}
+        href={`https://github.com/gregogun/portfolio/v3/edit/main/data/blog/${frontmatter.slug}.mdx`}
+      >
+        Edit this page on Github &rarr;
+      </a>
     </Container>
   );
 }
