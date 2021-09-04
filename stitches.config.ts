@@ -201,6 +201,9 @@ export const globalStyles = stitchesConfig.global({
     outlineOffset: '1px'
   },
   svg: { display: 'inline-block', verticalAlign: 'middle' },
+  li: {
+    listStyle: 'none'
+  },
 
   // COMMENTING OUT TILL CHECKS IN PROD
 
