@@ -1,16 +1,53 @@
 import { getMDXComponent } from 'mdx-bundler/client';
 import { getAllPosts, getSinglePost } from '@/lib/mdx';
 import BlogContainer from '@/components/blogContainer';
+import { ImageRounded } from '@/components/image';
 import { useMemo } from 'react';
+import { text } from '@/styles/text';
 
-const Post = ({ code, frontmatter }) => {
+export default function Post({ code, frontmatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
+
   return (
     <BlogContainer frontmatter={frontmatter}>
-      <Component />
+      <Component
+        components={{
+          p: (props) => (
+            <p
+              {...props}
+              className={text({
+                css: {
+                  marginTop: '40px'
+                }
+              })}
+            />
+          ),
+          li: (props) => (
+            <li
+              {...props}
+              className={text({
+                css: {
+                  marginTop: '16px'
+                }
+              })}
+            />
+          ),
+          ul: (props) => (
+            <ul
+              {...props}
+              className={text({
+                css: {
+                  marginTop: '40px'
+                }
+              })}
+            />
+          ),
+          ImageRounded
+        }}
+      />
     </BlogContainer>
   );
-};
+}
 
 export const getStaticProps = async ({ params }) => {
   const post = await getSinglePost(params.slug);
@@ -26,5 +63,3 @@ export const getStaticPaths = async () => {
     fallback: false
   };
 };
-
-export default Post;
