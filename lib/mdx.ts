@@ -34,7 +34,11 @@ export const getSinglePost = async (slug) => {
   });
 
   return {
-    frontmatter,
+    frontmatter: {
+      wordCount: source.split(/\s+/gu).length,
+      slug: slug || null,
+      ...frontmatter
+    },
     code
   };
 };
