@@ -2,6 +2,8 @@ import { styled } from 'stitches.config';
 import Head from 'next/head';
 import { Logo, Sun } from 'components/icons';
 import { ThemeToggle } from 'components/themeToggle';
+import { iconButton } from '@/styles/button';
+import Link from 'next/link';
 
 const PageContainer = styled('div', {
   width: '100%',
@@ -24,6 +26,14 @@ const ThemeToggleButton = () => {
     <ThemeToggle>
       <Sun size="24px" />
     </ThemeToggle>
+  );
+};
+
+const LogoButton = ({ children }) => {
+  return (
+    <Link href="/">
+      <a className={iconButton()}>{children}</a>
+    </Link>
   );
 };
 
@@ -54,7 +64,9 @@ const Container = ({ ...props }) => {
       </Head>
       <header>
         <Navbar>
-          <Logo size="40px" />
+          <LogoButton>
+            <Logo size="40px" />
+          </LogoButton>
           <ThemeToggleButton />
         </Navbar>
       </header>

@@ -1,18 +1,6 @@
+import { iconButton } from '@/styles/button';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { css } from 'stitches.config';
-
-const toggleButton = css({
-  borderRadius: '4px',
-  background: 'transparent',
-  width: '48px',
-  height: '48px',
-  border: 0,
-  cursor: 'pointer',
-  '&:hover': {
-    background: '$accent'
-  }
-});
 
 export const ThemeToggle = ({ children }) => {
   const { theme, setTheme } = useTheme();
@@ -30,7 +18,7 @@ export const ThemeToggle = ({ children }) => {
   return (
     <button
       aria-label={`Activate ${mode} mode`}
-      className={toggleButton()}
+      className={iconButton()}
       onClick={toggleTheme}
     >
       {children}
