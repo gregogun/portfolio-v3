@@ -3,7 +3,8 @@ import Head from 'next/head';
 import { Logo, Sun } from 'components/icons';
 import { ThemeToggle } from 'components/themeToggle';
 import { iconButton } from '@/styles/button';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { text } from '@/styles/text';
 
 const PageContainer = styled('div', {
   width: '100%',
@@ -21,6 +22,22 @@ const Navbar = styled('nav', {
   marginBottom: '64px'
 });
 
+const Flex = styled('div', {
+  display: 'flex',
+  justifyItems: 'center'
+});
+
+const Center = styled('div', {
+  display: 'grid',
+  placeItems: 'center'
+});
+
+const Menu = styled('ul', {
+  display: 'flex',
+  px: '16px',
+  py: 0
+});
+
 const ThemeToggleButton = () => {
   return (
     <ThemeToggle>
@@ -31,9 +48,42 @@ const ThemeToggleButton = () => {
 
 const LogoButton = ({ children }) => {
   return (
-    <Link href="/">
+    <NextLink href="/">
       <a className={iconButton()}>{children}</a>
-    </Link>
+    </NextLink>
+  );
+};
+
+const Link = ({ children, href }) => {
+  return (
+    <NextLink href={href}>
+      <a
+        className={text({
+          css: {
+            alignSelf: 'center',
+            textDecoration: 'none',
+            color: '$tertiary',
+            transitionDuration: '800ms',
+            '&:visited': {
+              color: '$tertiary'
+            },
+            '&:hover': {
+              color: '$secondary'
+            }
+          }
+        })}
+      >
+        {children}
+      </a>
+    </NextLink>
+  );
+};
+
+const MenuItem = ({ href, children, ...props }) => {
+  return (
+    <Center as="li" role="menuitem" css={{ mr: '16px' }} {...props}>
+      <Link href={href}>{children}</Link>
+    </Center>
   );
 };
 
@@ -64,9 +114,15 @@ const Container = ({ ...props }) => {
       </Head>
       <header>
         <Navbar>
-          <LogoButton>
-            <Logo size="40px" />
-          </LogoButton>
+          <Flex>
+            <LogoButton>
+              <Logo size="40px" />
+            </LogoButton>
+            <Menu role="menu">
+              <MenuItem href="/projects">projects</MenuItem>
+              <MenuItem href="/blog">blog</MenuItem>
+            </Menu>
+          </Flex>
           <ThemeToggleButton />
         </Navbar>
       </header>
