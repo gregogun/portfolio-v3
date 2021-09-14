@@ -5,11 +5,10 @@ export const iconButton = css({
   placeItems: 'center',
   borderRadius: '4px',
   background: 'transparent',
-  width: '48px',
-  height: '48px',
   border: 0,
   cursor: 'pointer',
+  transitionDuration: '300ms',
   '&:hover': {
-    background: '$accent'
-  }
+    background: '$accent',
+  },
 });

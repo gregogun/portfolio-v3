@@ -19,11 +19,11 @@ export const stitchesConfig = createCss({
       primary: '$white',
       secondary: '$black',
       tertiary: '$neutral400',
-      accent: '$neutral100'
+      accent: '$neutral100',
     },
     fonts: {
       body: 'Inter, apple-system, sans-serif',
-      heading: 'Poppins, apple-system, sans-serif'
+      heading: 'Poppins, apple-system, sans-serif',
     },
     space: {
       1: '4px',
@@ -33,7 +33,7 @@ export const stitchesConfig = createCss({
       5: '64px',
       6: '128px',
       7: '256px',
-      8: '512px'
+      8: '512px',
     },
     sizes: {
       max: 'max-content',
@@ -50,22 +50,22 @@ export const stitchesConfig = createCss({
       '5xl': '5rem',
       '6xl': '6rem',
       '7xl': '8rem',
-      '8xl': '16rem'
+      '8xl': '16rem',
     },
     radii: {
       xs: '2px',
       sm: '4px',
       md: '8px',
       lg: '16px',
-      full: '9999px'
-    }
+      full: '9999px',
+    },
   },
   media: {
     dark: '(prefers-color-scheme: dark)',
     bp1: '(min-width: 375px)',
     bp2: '(min-width: 768px)',
     bp3: '(min-width: 1024px)',
-    bp4: '(min-width: 1440px)'
+    bp4: '(min-width: 1440px)',
   },
   utils: {
     p:
@@ -74,39 +74,39 @@ export const stitchesConfig = createCss({
         paddingTop: value,
         paddingBottom: value,
         paddingLeft: value,
-        paddingRight: value
+        paddingRight: value,
       }),
     pt:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingTop: value
+        paddingTop: value,
       }),
     pr:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingRight: value
+        paddingRight: value,
       }),
     pb:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingBottom: value
+        paddingBottom: value,
       }),
     pl:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingLeft: value
+        paddingLeft: value,
       }),
     px:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
         paddingLeft: value,
-        paddingRight: value
+        paddingRight: value,
       }),
     py:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
         paddingTop: value,
-        paddingBottom: value
+        paddingBottom: value,
       }),
     m:
       (config) =>
@@ -114,52 +114,52 @@ export const stitchesConfig = createCss({
         marginTop: value,
         marginBottom: value,
         marginLeft: value,
-        marginRight: value
+        marginRight: value,
       }),
     mt:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginTop: value
+        marginTop: value,
       }),
     mr:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginRight: value
+        marginRight: value,
       }),
     mb:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginBottom: value
+        marginBottom: value,
       }),
     ml:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginLeft: value
+        marginLeft: value,
       }),
     mx:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
         marginLeft: value,
-        marginRight: value
+        marginRight: value,
       }),
     my:
       (config) =>
       (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
         marginTop: value,
-        marginBottom: value
+        marginBottom: value,
       }),
     boxSize:
       (config) =>
       (value: keyof typeof config.theme['sizes'] | number | (string & {})) => ({
         width: value,
-        height: value
+        height: value,
       }),
     bc:
       (config) =>
       (value: keyof typeof config.theme['colors'] | (string & {})) => ({
-        backgroundColor: value
-      })
-  }
+        backgroundColor: value,
+      }),
+  },
 });
 
 // --- DARK THEME ---
@@ -169,8 +169,8 @@ export const darkTheme = stitchesConfig.theme('dark-theme', {
     primary: '$black',
     secondary: '$white',
     tertiary: '$neutral300',
-    accent: '$neutral500'
-  }
+    accent: '$neutral500',
+  },
 });
 
 // --- GLOBAL STYLES ---
@@ -178,32 +178,29 @@ export const darkTheme = stitchesConfig.theme('dark-theme', {
 export const globalStyles = stitchesConfig.global({
   // Makes every element inherit box-sizing from the body
   '*, *::before, *::after': {
-    boxSizing: 'inherit'
+    boxSizing: 'inherit',
   },
   html: {
     minWidth: '360px',
     scrollBehavior: 'smooth',
-    overflowX: 'hidden'
+    overflowX: 'hidden',
   },
   body: {
     boxSizing: 'border-box',
     backgroundColor: '$primary',
     color: '$secondary',
     fontFamily: '$body',
-    margin: 0
+    margin: 0,
   },
   '::selection': {
     backgroundColor: '$secondary',
-    color: '$primary'
+    color: '$primary',
   },
   '*:focus': {
     outline: '1px dashed $secondary',
-    outlineOffset: '1px'
+    outlineOffset: '1px',
   },
   svg: { display: 'inline-block', verticalAlign: 'middle' },
-  li: {
-    listStyle: 'none'
-  },
 
   // COMMENTING OUT TILL CHECKS IN PROD
 
@@ -231,7 +228,7 @@ export const globalStyles = stitchesConfig.global({
       fontWeight: '400 600',
       fontDisplay: 'optional',
       src: 'local("Inter") url(/static/fonts/inter-var-latin.woff2) format("woff2")',
-      unicodeRange: `U+000-5FF`
+      unicodeRange: `U+000-5FF`,
     },
     {
       fontFamily: 'Poppins',
@@ -239,9 +236,9 @@ export const globalStyles = stitchesConfig.global({
       fontWeight: 600,
       fontDisplay: 'optional',
       src: 'local("Poppins") url(/static/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
-      unicodeRange: `U+000-5FF`
-    }
-  ]
+      unicodeRange: `U+000-5FF`,
+    },
+  ],
 });
 
 globalStyles();
