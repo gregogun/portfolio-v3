@@ -7,7 +7,7 @@ import { icon } from '@/styles/icon';
 import Container from '@/components/container';
 
 const ListItem = styled('li', {
-  listStyle: 'none'
+  listStyle: 'none',
 });
 
 const List = styled('ul', {
@@ -18,7 +18,7 @@ const List = styled('ul', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  width: '248px'
+  width: '248px',
 });
 
 const VisuallyHidden = styled('span', {
@@ -30,7 +30,13 @@ const VisuallyHidden = styled('span', {
   overflow: 'hidden',
   clip: 'rect(0, 0, 0, 0)',
   whiteSpace: 'nowrap' /* added line */,
-  border: 0
+  border: 0,
+});
+
+const Hero = styled('div', {
+  '@bp3': {
+    pl: '4rem',
+  },
 });
 
 const Link = ({ children, href, isExternal = false }) => {
@@ -64,8 +70,8 @@ const IconLink = ({ Icon, href, title = null, color = null, ...props }) => {
       <Icon
         className={icon({
           css: {
-            '&:hover': { fill: color, transform: 'translateY(-2px)' }
-          }
+            '&:hover': { fill: color, transform: 'translateY(-2px)' },
+          },
         })}
         aria-hidden="true"
         focusable="false"
@@ -124,67 +130,58 @@ const Socials = () => {
 
 export default function Home() {
   return (
-    <Container
-      css={{
-        '@bp2': {
-          p: '$4'
-        },
-        '@bp3': {
-          mt: '64px'
-        }
-      }}
-    >
-      <h1
-        className={text({
-          css: {
-            '@bp3': {
-              size: '4xl'
+    <Container>
+      <Hero>
+        <h1
+          className={text({
+            css: {
+              '@bp3': {
+                size: '4xl',
+              },
+              fontFamily: '$heading',
+              marginBottom: '2.5rem',
             },
-            fontFamily: '$heading',
-            marginBottom: '64px'
-          },
-          size: '3xl',
-          weight: 'semibold'
-        })}
-      >
-        Greg Ogun
-      </h1>
-
-      <p
-        className={text({
-          css: {
-            marginBottom: '32px'
-          },
-          weight: 'semibold',
-          size: 'lg'
-        })}
-      >
-        developer, designer, writer, and big time tea drinker.
-      </p>
-      <p
-        className={text({
-          css: {
-            marginBottom: '32px'
-          }
-        })}
-      >
-        welcome to my internet home.
-      </p>
-      <p
-        className={text({
-          css: {
-            marginBottom: '64px'
-          }
-        })}
-      >
-        whilst {" you're "} here, feel free to{' '}
-        <a className={link()} href="https://go-guestbook.vercel.app/">
-          sign my digital guestbook.
-        </a>
-      </p>
-      <footer>
-        <Socials />
-      </footer>
+            size: '3xl',
+            weight: 'semibold',
+          })}
+        >
+          {`Hey, I'm Greg Ogun`}
+        </h1>
+        <p
+          className={text({
+            css: {
+              marginBottom: '2.5rem',
+            },
+            size: 'lg',
+          })}
+        >
+          {`I'm a developer, designer, writer, and big time tea drinker.`}
+        </p>
+        <p
+          className={text({
+            css: {
+              marginBottom: '2.5rem',
+            },
+          })}
+        >
+          welcome to my internet home.
+        </p>
+        <p
+          className={text({
+            css: {
+              marginBottom: '2.5rem',
+            },
+          })}
+        >
+          whilst {" you're "} here, feel free to{' '}
+          <a className={link()} href="https://go-guestbook.vercel.app/">
+            sign my digital guestbook.
+          </a>
+        </p>
+        <footer>
+          <Socials />
+        </footer>
+      </Hero>
     </Container>
   );
 }
