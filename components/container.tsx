@@ -11,31 +11,32 @@ const PageContainer = styled('div', {
   maxWidth: '768px',
   margin: 'auto',
   padding: '$3',
-  borderRadius: '$md'
+  borderRadius: '$md',
 });
 
 const Navbar = styled('nav', {
+  maxWidth: '768px',
   height: '64px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  marginBottom: '64px'
+  marginBottom: '64px',
 });
 
 const Flex = styled('div', {
   display: 'flex',
-  justifyItems: 'center'
+  justifyItems: 'center',
 });
 
 const Center = styled('div', {
   display: 'grid',
-  placeItems: 'center'
+  placeItems: 'center',
 });
 
 const Menu = styled('ul', {
   display: 'flex',
   px: '16px',
-  py: 0
+  py: 0,
 });
 
 const ThemeToggleButton = () => {
@@ -65,12 +66,12 @@ const Link = ({ children, href }) => {
             color: '$tertiary',
             transitionDuration: '800ms',
             '&:visited': {
-              color: '$tertiary'
+              color: '$tertiary',
             },
             '&:hover': {
-              color: '$secondary'
-            }
-          }
+              color: '$secondary',
+            },
+          },
         })}
       >
         {children}
@@ -95,11 +96,21 @@ const Container = ({ ...props }) => {
       'Self-taught developer with a focus on designing and building scalable, maintainable and accessible solutions on the web.',
     image: 'https://gregogun.com/static/images/banner.png',
     type: 'website',
-    ...customMeta
+    ...customMeta,
   };
 
   return (
-    <PageContainer {...props}>
+    <PageContainer
+      css={{
+        '@bp2': {
+          p: '$4',
+        },
+        '@bp3': {
+          mt: '64px',
+        },
+      }}
+      {...props}
+    >
       <Head>
         <title>{meta.title}</title>
         <meta content={meta.description} name="description" />
@@ -116,7 +127,7 @@ const Container = ({ ...props }) => {
         <Navbar>
           <Flex>
             <LogoButton>
-              <Logo size="40px" />
+              <Logo size="3.5rem" />
             </LogoButton>
             <Menu role="menu">
               <MenuItem href="/projects">projects</MenuItem>
