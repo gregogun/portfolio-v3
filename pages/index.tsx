@@ -5,6 +5,7 @@ import { github, linkedin, twitter, twitch, youtube } from 'data/socials';
 import { link } from '@/styles/link';
 import { icon } from '@/styles/icon';
 import Container from '@/components/container';
+import NextLink from 'next/link';
 
 const ListItem = styled('li', {
   listStyle: 'none',
@@ -173,10 +174,12 @@ export default function Home() {
             },
           })}
         >
-          whilst {" you're "} here, feel free to{' '}
-          <a className={link()} href="https://go-guestbook.vercel.app/">
-            sign my digital guestbook.
-          </a>
+          whilst {" you're "} here, feel free to check out{' '}
+          <NextLink href="/projects" passHref>
+            <a className={link()} href="https://go-guestbook.vercel.app/">
+              {`what I'm working on.`}
+            </a>
+          </NextLink>
         </p>
         <footer>
           <Socials />
