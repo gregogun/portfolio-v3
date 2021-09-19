@@ -14,12 +14,16 @@ export const stitchesConfig = createCss({
       neutral300: '#8f8f8f',
       neutral400: '#555555',
       neutral500: '#2f2f2f',
+      gradient1: 'linear-gradient(70deg, #4158D0, #C850C0, #FFCC70)',
+      gradient2: 'linear-gradient(to right, #85FFBD, #FFFB7D)',
+      gradient3: 'linear-gradient(to right, #0093E9, #80D0C7)',
 
       // --- SEMANTIC TOKENS ---
       primary: '$white',
       secondary: '$black',
       tertiary: '$neutral400',
       accent: '$neutral100',
+      gradientLight: 'gradient1',
     },
     fonts: {
       body: 'Inter, apple-system, sans-serif',
