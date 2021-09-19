@@ -1,6 +1,8 @@
 import { css } from '../stitches.config';
 
 export const link = css({
+  margin: 0,
+
   variants: {
     type: {
       line: {
@@ -13,8 +15,8 @@ export const link = css({
 
         '&:hover': {
           color: '$tertiary',
-          transition: 'all 200ms linear 0ms'
-        }
+          transition: 'all 200ms linear 0ms',
+        },
       },
       noLine: {
         WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
@@ -25,19 +27,19 @@ export const link = css({
 
         '&:hover': {
           color: '$tertiary',
-          transition: 'all 200ms linear 0ms'
-        }
+          transition: 'all 200ms linear 0ms',
+        },
       },
       ghost: {
         WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
         color: 'inherit',
         transition: 'all 200ms linear 0ms',
         fontWeight: 'bold',
-        textDecoration: 'none'
-      }
-    }
+        textDecoration: 'none',
+      },
+    },
   },
   defaultVariants: {
-    type: 'line'
-  }
+    type: 'line',
+  },
 });
