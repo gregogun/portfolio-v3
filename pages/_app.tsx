@@ -1,5 +1,6 @@
 import { darkTheme } from '../stitches.config';
 import { ThemeProvider } from 'next-themes';
+import '@fontsource/inter/variable.css';
 
 function MyApp({ Component, pageProps }) {
   return (

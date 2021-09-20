@@ -17,6 +17,7 @@
     "format": "prettier --write"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.0",
     "@stitches/react": "^0.2.5",
     "esbuild": "^0.12.24",
     "gray-matter": "^4.0.3",

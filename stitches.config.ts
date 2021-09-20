@@ -26,8 +26,8 @@ export const stitchesConfig = createCss({
       gradientLight: 'gradient1',
     },
     fonts: {
-      body: 'Inter, apple-system, sans-serif',
-      heading: 'Poppins, apple-system, sans-serif',
+      body: 'InterVariable, apple-system, sans-serif',
+      heading: 'InterVariable, apple-system, sans-serif',
     },
     space: {
       1: '4px',
@@ -240,24 +240,24 @@ export const globalStyles = stitchesConfig.global({
   //     }, {})
   //   }
   // },
-  '@font-face': [
-    {
-      fontFamily: 'Inter',
-      fontStyle: 'normal',
-      fontWeight: '400 600',
-      fontDisplay: 'optional',
-      src: 'local("Inter") url(/static/fonts/inter-var-latin.woff2) format("woff2")',
-      unicodeRange: `U+000-5FF`,
-    },
-    {
-      fontFamily: 'Poppins',
-      fontStyle: 'normal',
-      fontWeight: 600,
-      fontDisplay: 'optional',
-      src: 'local("Poppins") url(/static/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
-      unicodeRange: `U+000-5FF`,
-    },
-  ],
+  // '@font-face': [
+  //   {
+  //     fontFamily: 'Inter',
+  //     fontStyle: 'normal',
+  //     fontWeight: '400 600',
+  //     fontDisplay: 'optional',
+  //     src: 'local("Inter") url(/static/fonts/inter-var-latin.woff2) format("woff2")',
+  //     unicodeRange: `U+000-5FF`,
+  //   },
+  //   {
+  //     fontFamily: 'Poppins',
+  //     fontStyle: 'normal',
+  //     fontWeight: 600,
+  //     fontDisplay: 'optional',
+  //     src: 'local("Poppins") url(/static/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
+  //     unicodeRange: `U+000-5FF`,
+  //   },
+  // ],
 });
 
 globalStyles();
