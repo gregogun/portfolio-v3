@@ -8,7 +8,7 @@ export const stitchesConfig = createCss({
       // --- NEUTRALS ---
       black: '#161616',
       white: '#fefefe',
-      neutral50: '#fcfcfc',
+      neutral50: '#efefef',
       neutral100: '#e8e8e8',
       neutral200: '#c7c7c7',
       neutral300: '#8f8f8f',
@@ -22,7 +22,7 @@ export const stitchesConfig = createCss({
       primary: '$white',
       secondary: '$black',
       tertiary: '$neutral400',
-      accent: '$neutral100',
+      accent: '$neutral50',
       gradientLight: 'gradient1',
     },
     fonts: {
@@ -173,7 +173,7 @@ export const stitchesConfig = createCss({
         width: value,
         height: value,
       }),
-    bc:
+    bg:
       (config) =>
       (value: keyof typeof config.theme['colors'] | (string & {})) => ({
         backgroundColor: value,
@@ -240,24 +240,6 @@ export const globalStyles = stitchesConfig.global({
   //     }, {})
   //   }
   // },
-  // '@font-face': [
-  //   {
-  //     fontFamily: 'Inter',
-  //     fontStyle: 'normal',
-  //     fontWeight: '400 600',
-  //     fontDisplay: 'optional',
-  //     src: 'local("Inter") url(/static/fonts/inter-var-latin.woff2) format("woff2")',
-  //     unicodeRange: `U+000-5FF`,
-  //   },
-  //   {
-  //     fontFamily: 'Poppins',
-  //     fontStyle: 'normal',
-  //     fontWeight: 600,
-  //     fontDisplay: 'optional',
-  //     src: 'local("Poppins") url(/static/fonts/poppins-v15-latin-600.woff) format("woff") url(/fonts/poppins-v15-latin-600.woff2) format("woff2")',
-  //     unicodeRange: `U+000-5FF`,
-  //   },
-  // ],
 });
 
 globalStyles();
