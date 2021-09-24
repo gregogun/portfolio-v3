@@ -136,14 +136,11 @@ export default function Home() {
         <h1
           className={text({
             css: {
-              '@bp3': {
-                size: '4xl',
-              },
               fontFamily: '$heading',
               marginBottom: '2.5rem',
             },
             size: '3xl',
-            weight: 'semibold',
+            weight: 'black',
           })}
         >
           {`Hey, I'm Greg Ogun`}
@@ -154,6 +151,7 @@ export default function Home() {
               marginBottom: '2.5rem',
             },
             size: 'lg',
+            weight: 'semibold',
           })}
         >
           {`I'm a developer, designer, writer, and big time tea drinker.`}

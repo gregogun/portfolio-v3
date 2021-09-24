@@ -8,69 +8,81 @@ export const text = css({
   variants: {
     type: {
       body: {
-        fontFamily: '$body'
+        fontFamily: '$body',
       },
       heading: {
-        fontFamily: '$heading'
-      }
+        fontFamily: '$heading',
+      },
     },
     size: {
       xs: {
         fontSize: '14px',
-        lineHeight: '21px'
+        lineHeight: '21px',
       },
       sm: {
         fontSize: '16px',
-        lineHeight: '22px'
+        lineHeight: '22px',
       },
       md: {
         fontSize: '18px',
-        lineHeight: '24px'
+        lineHeight: '24px',
       },
       lg: {
         fontSize: '20px',
-        lineHeight: '30px'
+        lineHeight: '30px',
       },
       xl: {
         fontSize: '24px',
-        lineHeight: '36px'
+        lineHeight: '36px',
       },
       '2xl': {
         fontSize: '32px',
-        lineHeight: '48px'
+        lineHeight: '48px',
       },
       '3xl': {
         fontSize: '40px',
-        lineHeight: '48px'
+        lineHeight: '48px',
       },
       '4xl': {
         fontSize: '48px',
-        lineHeight: '48px'
+        lineHeight: '48px',
       },
       title: {
         fontSize: '64px',
-        lineHeight: '72px'
-      }
+        lineHeight: '72px',
+      },
     },
     weight: {
+      black: {
+        fontStyle: 'normal',
+        fontWeight: 900,
+      },
+      extrabold: {
+        fontStyle: 'normal',
+        fontWeight: 900,
+      },
       bold: {
         fontStyle: 'normal',
-        fontWeight: '700'
+        fontWeight: 700,
       },
       semibold: {
         fontStyle: 'normal',
-        fontWeight: '600'
+        fontWeight: 600,
       },
       regular: {
         fontStyle: 'normal',
-        fontWeight: '400'
-      }
-    }
+        fontWeight: 400,
+      },
+      light: {
+        fontStyle: 'normal',
+        fontWeight: 300,
+      },
+    },
   },
 
   defaultVariants: {
     size: 'md',
     weight: 'regular',
-    type: 'body'
-  }
+    type: 'body',
+  },
 });
