@@ -104,7 +104,7 @@ const Container = ({ ...props }) => {
         '@bp2': {
           p: '$4',
         },
-        '@bp3': {
+        '@bp4': {
           mt: '64px',
         },
       }}
