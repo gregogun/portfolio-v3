@@ -35,8 +35,7 @@ const Center = styled('div', {
 
 const Menu = styled('ul', {
   display: 'flex',
-  px: '16px',
-  py: 0,
+  px: '$1',
 });
 
 const ThemeToggleButton = () => {
