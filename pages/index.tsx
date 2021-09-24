@@ -140,12 +140,12 @@ export default function Home() {
               marginBottom: '2.5rem',
             },
             size: '3xl',
-            weight: 'black',
+            weight: 'extrabold',
           })}
         >
           {`Hey, I'm Greg Ogun`}
         </h1>
-        <p
+        <h2
           className={text({
             css: {
               marginBottom: '2.5rem',
@@ -155,7 +155,7 @@ export default function Home() {
           })}
         >
           {`I'm a developer, designer, writer, and big time tea drinker.`}
-        </p>
+        </h2>
         <p
           className={text({
             css: {
