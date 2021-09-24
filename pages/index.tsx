@@ -137,7 +137,7 @@ export default function Home() {
           className={text({
             css: {
               fontFamily: '$heading',
-              marginBottom: '2.5rem',
+              mb: '2.5rem',
             },
             size: '3xl',
             weight: 'extrabold',
@@ -148,7 +148,7 @@ export default function Home() {
         <h2
           className={text({
             css: {
-              marginBottom: '2.5rem',
+              mb: '2.5rem',
             },
             size: 'lg',
             weight: 'semibold',
@@ -159,7 +159,7 @@ export default function Home() {
         <p
           className={text({
             css: {
-              marginBottom: '2.5rem',
+              mb: '2.5rem',
             },
           })}
         >
@@ -168,7 +168,7 @@ export default function Home() {
         <p
           className={text({
             css: {
-              marginBottom: '2.5rem',
+              mb: '2.5rem',
             },
           })}
         >

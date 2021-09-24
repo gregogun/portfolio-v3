@@ -12,7 +12,7 @@ const HDivider = styled('hr', {
   border: 0,
   borderBottom: '1px dashed var(--colors-accent)',
   background: '$tertiary',
-  mb: '4rem',
+  mb: '$4',
 });
 
 const VDivider = styled('hr', {
@@ -38,7 +38,7 @@ export default function Posts({ posts }) {
               size: '4xl',
             },
             fontFamily: '$heading',
-            marginBottom: '1rem',
+            mb: '$1',
           },
           size: '3xl',
           weight: 'semibold',
@@ -49,7 +49,7 @@ export default function Posts({ posts }) {
       <p
         className={text({
           css: {
-            marginBottom: '1.5rem',
+            mb: '$1.5',
           },
           size: 'lg',
         })}
@@ -66,7 +66,7 @@ export default function Posts({ posts }) {
             className={flex({
               css: {
                 cursor: 'pointer',
-                p: '0.25rem',
+                p: '$0.25',
                 borderRadius: '$md',
                 '&:focus-within': {
                   boxShadow: '0 0 0 0.125rem #7B61FF',
@@ -77,7 +77,7 @@ export default function Posts({ posts }) {
           >
             <p
               className={text({
-                css: { color: '$tertiary', mb: '1rem' },
+                css: { color: '$tertiary', mb: '$1' },
                 size: 'sm',
               })}
             >
@@ -87,7 +87,7 @@ export default function Posts({ posts }) {
             <div>
               <h2
                 className={text({
-                  css: { mb: '1rem' },
+                  css: { mb: '$1' },
                 })}
               >
                 <NextLink href={`/blog/${post.slug}`}>
@@ -96,6 +96,7 @@ export default function Posts({ posts }) {
                     className={link({
                       css: {
                         fontSize: '32px',
+                        outline: 0,
                       },
                       type: 'noLine',
                     })}
@@ -106,7 +107,7 @@ export default function Posts({ posts }) {
               </h2>
               <p
                 className={text({
-                  css: { color: '$tertiary', mb: '0.5rem' },
+                  css: { color: '$tertiary', mb: '$0.5' },
                 })}
               >
                 {post.frontmatter.description}
