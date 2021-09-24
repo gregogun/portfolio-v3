@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.0",
-    "@stitches/react": "^0.2.5",
+    "@stitches/react": "^1.2.1",
     "esbuild": "^0.12.24",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^6.0.1",
