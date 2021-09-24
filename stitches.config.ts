@@ -1,6 +1,6 @@
-import { createCss } from '@stitches/react';
+import { createStitches, PropertyValue, ScaleValue } from '@stitches/react';
 
-export const stitchesConfig = createCss({
+export const stitchesConfig = createStitches({
   // DEFAULT THEME
 
   theme: {
@@ -30,14 +30,18 @@ export const stitchesConfig = createCss({
       heading: 'InterVariable, apple-system, sans-serif',
     },
     space: {
-      1: '4px',
-      2: '8px',
-      3: '16px',
-      4: '32px',
-      5: '64px',
-      6: '128px',
-      7: '256px',
-      8: '512px',
+      0.25: '4px',
+      0.5: '8px',
+      1: '16px',
+      1.5: '24px',
+      2: '32px',
+      2.5: '40px',
+      3: '48px',
+      4: '64px',
+      6: '96px',
+      8: '128px',
+      16: '256px',
+      32: '512px',
     },
     sizes: {
       max: 'max-content',
@@ -87,103 +91,79 @@ export const stitchesConfig = createCss({
     bp4: '(min-width: 1440px)',
   },
   utils: {
-    p:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingTop: value,
-        paddingBottom: value,
-        paddingLeft: value,
-        paddingRight: value,
-      }),
-    pt:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingTop: value,
-      }),
-    pr:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingRight: value,
-      }),
-    pb:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingBottom: value,
-      }),
-    pl:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingLeft: value,
-      }),
-    px:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingLeft: value,
-        paddingRight: value,
-      }),
-    py:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        paddingTop: value,
-        paddingBottom: value,
-      }),
-    m:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginTop: value,
-        marginBottom: value,
-        marginLeft: value,
-        marginRight: value,
-      }),
-    mt:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginTop: value,
-      }),
-    mr:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginRight: value,
-      }),
-    mb:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginBottom: value,
-      }),
-    ml:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginLeft: value,
-      }),
-    mx:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginLeft: value,
-        marginRight: value,
-      }),
-    my:
-      (config) =>
-      (value: keyof typeof config.theme['space'] | number | (string & {})) => ({
-        marginTop: value,
-        marginBottom: value,
-      }),
-    boxSize:
-      (config) =>
-      (value: keyof typeof config.theme['sizes'] | number | (string & {})) => ({
-        width: value,
-        height: value,
-      }),
-    bg:
-      (config) =>
-      (value: keyof typeof config.theme['colors'] | (string & {})) => ({
-        backgroundColor: value,
-      }),
+    p: (value: ScaleValue<'space'> | PropertyValue<'padding'>) => ({
+      paddingTop: value,
+      paddingBottom: value,
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    pt: (value: ScaleValue<'space'> | PropertyValue<'paddingTop'>) => ({
+      paddingTop: value,
+    }),
+    pr: (value: ScaleValue<'space'> | PropertyValue<'paddingRight'>) => ({
+      paddingRight: value,
+    }),
+    pb: (value: ScaleValue<'space'> | PropertyValue<'paddingBottom'>) => ({
+      paddingBottom: value,
+    }),
+    pl: (value: ScaleValue<'space'> | PropertyValue<'paddingLeft'>) => ({
+      paddingLeft: value,
+    }),
+    px: (
+      value: ScaleValue<'space'> | PropertyValue<'paddingLeft' & 'paddingRight'>
+    ) => ({
+      paddingLeft: value,
+      paddingRight: value,
+    }),
+    py: (
+      value: ScaleValue<'space'> | PropertyValue<'paddingTop' & 'paddingBottom'>
+    ) => ({
+      paddingTop: value,
+      paddingBottom: value,
+    }),
+    m: (value: ScaleValue<'space'> | PropertyValue<'margin'>) => ({
+      marginTop: value,
+      marginBottom: value,
+      marginLeft: value,
+      marginRight: value,
+    }),
+    mt: (value: ScaleValue<'space'> | PropertyValue<'marginTop'>) => ({
+      marginTop: value,
+    }),
+    mr: (value: ScaleValue<'space'> | PropertyValue<'marginRight'>) => ({
+      marginRight: value,
+    }),
+    mb: (value: ScaleValue<'space'> | PropertyValue<'marginBottom'>) => ({
+      marginBottom: value,
+    }),
+    ml: (value: ScaleValue<'space'> | PropertyValue<'marginLeft'>) => ({
+      marginLeft: value,
+    }),
+    mx: (
+      value: ScaleValue<'space'> | PropertyValue<'marginLeft' & 'marginRight'>
+    ) => ({
+      marginLeft: value,
+      marginRight: value,
+    }),
+    my: (
+      value: ScaleValue<'space'> | PropertyValue<'marginTop' & 'marginBottom'>
+    ) => ({
+      marginTop: value,
+      marginBottom: value,
+    }),
+    boxSize: (value: ScaleValue<'sizes'>) => ({
+      width: value,
+      height: value,
+    }),
+    bg: (value: PropertyValue<'backgroundColor'>) => ({
+      backgroundColor: value,
+    }),
   },
 });
 
 // --- DARK THEME ---
 
-export const darkTheme = stitchesConfig.theme('dark-theme', {
+export const darkTheme = stitchesConfig.createTheme('dark-theme', {
   colors: {
     primary: '$black',
     secondary: '$white',
@@ -194,7 +174,7 @@ export const darkTheme = stitchesConfig.theme('dark-theme', {
 
 // --- GLOBAL STYLES ---
 
-export const globalStyles = stitchesConfig.global({
+export const globalStyles = stitchesConfig.globalCss({
   // Makes every element inherit box-sizing from the body
   '*, *::before, *::after': {
     boxSizing: 'inherit',
@@ -244,4 +224,4 @@ export const globalStyles = stitchesConfig.global({
 
 globalStyles();
 
-export const { styled, getCssString, css, keyframes } = stitchesConfig;
+export const { styled, getCssText, css, keyframes } = stitchesConfig;
