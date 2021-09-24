@@ -59,7 +59,7 @@ export const text = css({
       },
       extrabold: {
         fontStyle: 'normal',
-        fontWeight: 900,
+        fontWeight: 800,
       },
       bold: {
         fontStyle: 'normal',
