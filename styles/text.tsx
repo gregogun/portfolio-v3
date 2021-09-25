@@ -16,40 +16,94 @@ export const text = css({
     },
     size: {
       xs: {
-        fontSize: '14px',
-        lineHeight: '21px',
+        '@bp1': {
+          fontSize: '12px',
+          lineHeight: '18px',
+        },
+        '@bp2': {
+          fontSize: '14px',
+          lineHeight: '21px',
+        },
       },
       sm: {
-        fontSize: '16px',
-        lineHeight: '22px',
+        '@bp1': {
+          fontSize: '14px',
+          lineHeight: '21px',
+        },
+        '@bp2': {
+          fontSize: '16px',
+          lineHeight: '22px',
+        },
       },
       md: {
-        fontSize: '18px',
-        lineHeight: '24px',
+        '@bp1': {
+          fontSize: '16px',
+          lineHeight: '22px',
+        },
+        '@bp2': {
+          fontSize: '18px',
+          lineHeight: '24px',
+        },
       },
       lg: {
-        fontSize: '20px',
-        lineHeight: '30px',
+        '@bp1': {
+          fontSize: '18px',
+          lineHeight: '24px',
+        },
+        '@bp2': {
+          fontSize: '20px',
+          lineHeight: '28px',
+        },
       },
       xl: {
-        fontSize: '24px',
-        lineHeight: '36px',
+        '@bp1': {
+          fontSize: '22px',
+          lineHeight: '32px',
+        },
+        '@bp3': {
+          fontSize: '24px',
+          lineHeight: '36px',
+        },
       },
       '2xl': {
-        fontSize: '32px',
-        lineHeight: '48px',
+        '@bp1': {
+          fontSize: '28px',
+          lineHeight: '40px',
+        },
+        '@bp3': {
+          fontSize: '32px',
+          lineHeight: '48px',
+        },
       },
       '3xl': {
-        fontSize: '40px',
-        lineHeight: '48px',
+        '@bp1': {
+          fontSize: '32px',
+          lineHeight: '48px',
+        },
+        '@bp3': {
+          fontSize: '40px',
+          lineHeight: '48px',
+        },
       },
       '4xl': {
-        fontSize: '48px',
-        lineHeight: '48px',
+        '@bp1': {
+          fontSize: '40px',
+          lineHeight: '48px',
+        },
+        '@bp3': {
+          fontSize: '48px',
+          lineHeight: '48px',
+        },
       },
       title: {
-        fontSize: '64px',
-        lineHeight: '72px',
+        '@bp1': {
+          fontSize: '48px',
+          lineHeight: '56px',
+        },
+        '@bp3': {
+          fontSize: '64px',
+          lineHeight: '72px',
+        },
       },
     },
     weight: {
