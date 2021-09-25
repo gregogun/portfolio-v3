@@ -9,9 +9,8 @@ import { text } from '@/styles/text';
 const PageContainer = styled('div', {
   width: '100%',
   maxWidth: '768px',
+  minHeight: '100vh',
   margin: 'auto',
-  padding: '$3',
-  borderRadius: '$md',
 });
 
 const Navbar = styled('nav', {
@@ -101,6 +100,9 @@ const Container = ({ ...props }) => {
   return (
     <PageContainer
       css={{
+        '@bp1': {
+          p: '$3',
+        },
         '@bp2': {
           p: '$4',
         },

@@ -7,22 +7,27 @@ import { list } from '@/styles/list';
 import { styled } from 'stitches.config';
 import { flex } from '@/styles/utils/flex';
 import { useRef } from 'react';
+import { Post } from 'types/post';
 
 const HDivider = styled('hr', {
   border: 0,
   borderBottom: '1px dashed var(--colors-accent)',
   background: '$tertiary',
-  mb: '$4',
+  mb: '$8',
 });
 
 const VDivider = styled('hr', {
+  margin: 0,
+  mx: '$6',
   border: 0,
   backgroundColor: '$accent',
   width: '0.125rem',
-  height: '5rem',
+  height: '90%',
 });
 
-export default function Posts({ posts }) {
+type PostProps = Post;
+
+const BlogCard = ({ post }: { post: PostProps }) => {
   const linkRef = useRef(null);
 
   const fireClickEvent = () => {
@@ -30,90 +35,104 @@ export default function Posts({ posts }) {
   };
 
   return (
+    /* eslint-disable */
+    <li
+      onClick={fireClickEvent}
+      className={flex({
+        css: {
+          height: '$6xl',
+          cursor: 'pointer',
+          p: '$1',
+          borderRadius: '$md',
+          '&:focus-within': {
+            boxShadow: '0 0 0 0.125rem #7B61FF',
+          },
+        },
+      })}
+    >
+      <p
+        className={text({
+          css: {
+            '@bp1': {
+              pt: '$3',
+            },
+            '@bp2': {
+              pt: '$4',
+            },
+            color: '$tertiary',
+            mb: '$1',
+            alignSelf: 'start',
+          },
+          size: 'sm',
+        })}
+      >
+        {post.frontmatter.publishedAt.toString().replace('-', '/').slice(0, 5)}
+      </p>
+      <VDivider />
+      <div>
+        <h2
+          className={text({
+            css: {
+              mb: '$2',
+            },
+          })}
+        >
+          <NextLink href={`/blog/${post.slug}`}>
+            <a
+              ref={linkRef}
+              className={link({
+                css: {
+                  '@bp1': {
+                    fontSize: '1.5rem',
+                  },
+                  '@bp3': {
+                    fontSize: '2rem',
+                  },
+                  outline: 0,
+                },
+                type: 'noLine',
+              })}
+            >
+              {post.frontmatter.title}
+            </a>
+          </NextLink>
+        </h2>
+        <p
+          className={text({
+            size: 'sm',
+            css: { color: '$tertiary', mb: '$0.5' },
+          })}
+        >
+          {post.frontmatter.description}
+        </p>
+      </div>
+    </li>
+  );
+};
+
+export default function Posts({ posts }) {
+  return (
     <Container>
       <h1
         className={text({
+          size: '3xl',
           css: {
-            '@bp3': {
-              size: '4xl',
-            },
             fontFamily: '$heading',
             mb: '$1',
           },
-          size: '3xl',
           weight: 'semibold',
         })}
       >
         Blog
       </h1>
-      <p
-        className={text({
-          css: {
-            mb: '$1.5',
-          },
-          size: 'lg',
-        })}
-      >
+      <p className={text()}>
         Welcome to my digital garden. Here you can find my thoughts and findings
         in web development, design and beyond.
       </p>
       <HDivider />
       <ul className={list()}>
         {posts.map((post, index) => (
-          /* eslint-disable */
-          <li
-            onClick={fireClickEvent}
-            className={flex({
-              css: {
-                cursor: 'pointer',
-                p: '$0.25',
-                borderRadius: '$md',
-                '&:focus-within': {
-                  boxShadow: '0 0 0 0.125rem #7B61FF',
-                },
-              },
-            })}
-            key={index}
-          >
-            <p
-              className={text({
-                css: { color: '$tertiary', mb: '$1' },
-                size: 'sm',
-              })}
-            >
-              {post.frontmatter.publishedAt}
-            </p>
-            <VDivider />
-            <div>
-              <h2
-                className={text({
-                  css: { mb: '$1' },
-                })}
-              >
-                <NextLink href={`/blog/${post.slug}`}>
-                  <a
-                    ref={linkRef}
-                    className={link({
-                      css: {
-                        fontSize: '32px',
-                        outline: 0,
-                      },
-                      type: 'noLine',
-                    })}
-                  >
-                    {post.frontmatter.title}
-                  </a>
-                </NextLink>
-              </h2>
-              <p
-                className={text({
-                  css: { color: '$tertiary', mb: '$0.5' },
-                })}
-              >
-                {post.frontmatter.description}
-              </p>
-            </div>
-          </li>
+          <BlogCard key={index} post={post} />
         ))}
       </ul>
     </Container>
