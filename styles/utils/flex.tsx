@@ -13,13 +13,7 @@ export const flex = css({
       },
     },
     spaced: {
-      none: {
-        justifyContent: 'normal',
-      },
-      even: {
-        justifyContent: 'space-evenly',
-      },
-      full: {
+      true: {
         justifyContent: 'space-between',
       },
     },
@@ -38,7 +32,6 @@ export const flex = css({
 
   defaultVariants: {
     flow: 'horizontal',
-    spaced: 'none',
     alignment: 'center',
   },
 });
