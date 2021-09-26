@@ -5,6 +5,8 @@ import { ThemeToggle } from 'components/themeToggle';
 import { iconButton } from '@/styles/button';
 import NextLink from 'next/link';
 import { text } from '@/styles/text';
+import { flex } from '@/styles/utils/flex';
+import { link } from '@/styles/link';
 
 const PageContainer = styled('div', {
   width: '100%',
@@ -14,7 +16,6 @@ const PageContainer = styled('div', {
 });
 
 const Navbar = styled('nav', {
-  maxWidth: '768px',
   height: '64px',
   display: 'flex',
   alignItems: 'center',
@@ -86,7 +87,12 @@ const MenuItem = ({ href, children, ...props }) => {
   );
 };
 
-const Container = ({ ...props }) => {
+interface ContainerProps {
+  title: string;
+  children: JSX.Element | JSX.Element[];
+}
+
+const Container = ({ ...props }: ContainerProps) => {
   const { children, ...customMeta } = props;
   const meta = {
     title: 'Greg Ogun',
@@ -109,6 +115,7 @@ const Container = ({ ...props }) => {
         '@bp4': {
           mt: '64px',
         },
+        pb: '$4',
       }}
       {...props}
     >
@@ -138,7 +145,29 @@ const Container = ({ ...props }) => {
           <ThemeToggleButton />
         </Navbar>
       </header>
-      <main>{children}</main>
+      <main>
+        {children}
+        <footer
+          role="contentinfo"
+          className={flex({
+            spaced: 'true',
+            css: {
+              mt: '$8',
+              pl: meta.title === 'Greg Ogun' ? '$8' : 0,
+            },
+          })}
+        >
+          <div>
+            <p>
+              Built with ♥ and{' '}
+              <a href="https://nextjs.org" className={link()}>
+                Next.js
+              </a>{' '}
+              © 2021 Greg Ogun.
+            </p>
+          </div>
+        </footer>
+      </main>
     </PageContainer>
   );
 };
