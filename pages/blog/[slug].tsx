@@ -17,8 +17,8 @@ export default function Post({ code, frontmatter }) {
               {...props}
               className={text({
                 css: {
-                  marginTop: '40px'
-                }
+                  mt: '$7',
+                },
               })}
             />
           ),
@@ -27,8 +27,8 @@ export default function Post({ code, frontmatter }) {
               {...props}
               className={text({
                 css: {
-                  marginTop: '16px'
-                }
+                  mt: '$4',
+                },
               })}
             />
           ),
@@ -37,12 +37,12 @@ export default function Post({ code, frontmatter }) {
               {...props}
               className={text({
                 css: {
-                  marginTop: '40px'
-                }
+                  mt: '$7',
+                },
               })}
             />
           ),
-          ImageRounded
+          ImageRounded,
         }}
       />
     </BlogContainer>
@@ -52,7 +52,7 @@ export default function Post({ code, frontmatter }) {
 export const getStaticProps = async ({ params }) => {
   const post = await getSinglePost(params.slug);
   return {
-    props: { ...post }
+    props: { ...post },
   };
 };
 
@@ -60,6 +60,6 @@ export const getStaticPaths = async () => {
   const paths = getAllPosts().map(({ slug }) => ({ params: { slug } }));
   return {
     paths,
-    fallback: false
+    fallback: false,
   };
 };
