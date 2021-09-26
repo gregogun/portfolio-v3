@@ -1,20 +1,37 @@
 import { link } from '@/styles/link';
 import { text } from '@/styles/text';
+import { flex } from '@/styles/utils/flex';
 import { css, styled } from 'stitches.config';
 import Container from './container';
+import Image from 'next/image';
+import NextLink from 'next/link';
+import type { Frontmatter } from 'types/post';
+import { parseISO, format } from 'date-fns';
+
+const rounded = css({
+  borderRadius: '$full',
+});
 
 const Article = styled('article', {
-  mb: '32px'
+  mb: '32px',
 });
 
 const line = css({
   mb: '32px',
   border: 0,
   height: '2px',
-  backgroundImage: 'linear-gradient(to right, $primary, $accent, $primary)'
+  backgroundImage: 'linear-gradient(to right, $primary, $accent, $primary)',
 });
 
-export default function BlogContainer({ children, frontmatter }) {
+type BlogContainerProps = {
+  frontmatter: Frontmatter;
+  children: JSX.Element;
+};
+
+export default function BlogContainer({
+  children,
+  frontmatter,
+}: BlogContainerProps) {
   return (
     <Container
       title={`${frontmatter.title} - Greg Ogun`}
@@ -27,26 +44,60 @@ export default function BlogContainer({ children, frontmatter }) {
           className={text({
             css: {
               '@bp3': {
-                size: '4xl'
+                size: '4xl',
               },
               fontFamily: '$heading',
-              marginBottom: '8px'
+              mb: '$4',
             },
             size: '3xl',
-            weight: 'semibold'
+            weight: 'semibold',
           })}
         >
           {frontmatter.title}
         </h1>
+        <div className={flex({ css: { mb: '$4' } })}>
+          <Image
+            width={24}
+            height={24}
+            src="/static/images/me/profile.jpg"
+            alt="Greg Ogun"
+            className={rounded()}
+          />
+          <p
+            className={text({
+              size: 'sm',
+              css: {
+                ml: '$2',
+                color: '$tertiary',
+              },
+            })}
+          >
+            Greg Ogun - {''}
+            {format(
+              parseISO(frontmatter.publishedAt.toISOString()),
+              'MMMM dd, yyyy'
+            )}
+          </p>
+        </div>
         {children}
       </Article>
       <hr className={line()} />
-      <a
-        className={link()}
-        href={`https://github.com/gregogun/portfolio/v3/edit/main/data/blog/${frontmatter.slug}.mdx`}
+      <div
+        className={flex({
+          spaced: 'true',
+        })}
       >
-        Edit this page on Github &rarr;
-      </a>
+        {' '}
+        <NextLink href="/blog" passHref>
+          <a className={link()}>&larr; All posts</a>
+        </NextLink>
+        <a
+          className={link()}
+          href={`https://github.com/gregogun/portfolio/v3/edit/main/data/blog/${frontmatter.slug}.mdx`}
+        >
+          Edit this page on Github &rarr;
+        </a>
+      </div>
     </Container>
   );
 }

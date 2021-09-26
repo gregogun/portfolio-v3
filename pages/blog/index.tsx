@@ -7,7 +7,9 @@ import { list } from '@/styles/list';
 import { styled } from 'stitches.config';
 import { flex } from '@/styles/utils/flex';
 import { useRef } from 'react';
-import { Post } from 'types/post';
+import type { Post } from 'types/post';
+import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
 
 const HDivider = styled('hr', {
   border: 0,
@@ -17,6 +19,12 @@ const HDivider = styled('hr', {
 });
 
 const VDivider = styled('hr', {
+  '@bp1': {
+    display: 'none',
+  },
+  '@bp2': {
+    display: 'block',
+  },
   margin: 0,
   mx: '$6',
   border: 0,
@@ -40,9 +48,10 @@ const BlogCard = ({ post }: { post: PostProps }) => {
       onClick={fireClickEvent}
       className={flex({
         css: {
+          mb: '$6',
           height: '$6xl',
           cursor: 'pointer',
-          p: '$1',
+          p: '$1 $0.5',
           borderRadius: '$md',
           '&:focus-within': {
             boxShadow: '0 0 0 0.125rem #7B61FF',
@@ -54,7 +63,8 @@ const BlogCard = ({ post }: { post: PostProps }) => {
         className={text({
           css: {
             '@bp1': {
-              pt: '$3',
+              // pt: '$3',
+              mr: '$4',
             },
             '@bp2': {
               pt: '$4',
@@ -66,7 +76,10 @@ const BlogCard = ({ post }: { post: PostProps }) => {
           size: 'sm',
         })}
       >
-        {post.frontmatter.publishedAt.toString().replace('-', '/').slice(0, 5)}
+        {format(parseISO(post.frontmatter.publishedAt.toISOString()), 'dd, MM')
+          .replace(',', '/')
+          .split(' ')
+          .join('')}
       </p>
       <VDivider />
       <div>
@@ -90,7 +103,7 @@ const BlogCard = ({ post }: { post: PostProps }) => {
                   },
                   outline: 0,
                 },
-                type: 'noLine',
+                type: 'ghost',
               })}
             >
               {post.frontmatter.title}
@@ -118,7 +131,7 @@ export default function Posts({ posts }) {
           size: '3xl',
           css: {
             fontFamily: '$heading',
-            mb: '$1',
+            mb: '$4',
           },
           weight: 'semibold',
         })}
