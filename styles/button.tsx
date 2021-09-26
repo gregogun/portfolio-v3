@@ -1,9 +1,18 @@
 import { css } from 'stitches.config';
 
 export const iconButton = css({
+  // '@bp1': {
+  //   boxSize: '$2xl',
+  // },
+  // '@bp3': {
+  //   boxSize: '$4xl',
+  // },
+  width: '$4xl',
+  height: '$4xl',
+  p: '$2',
   display: 'grid',
   placeItems: 'center',
-  borderRadius: '4px',
+  borderRadius: '$md',
   background: 'transparent',
   border: 0,
   cursor: 'pointer',

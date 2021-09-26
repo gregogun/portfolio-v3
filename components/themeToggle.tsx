@@ -18,7 +18,7 @@ export const ThemeToggle = ({ children }) => {
   return (
     <button
       aria-label={`Activate ${mode} mode`}
-      className={iconButton({ css: { p: '1rem' } })}
+      className={iconButton()}
       onClick={toggleTheme}
     >
       {children}

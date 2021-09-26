@@ -1,8 +1,9 @@
-const Logo = ({ size }) => {
+import { svg } from '@/styles/svg';
+
+const Logo = () => {
   return (
     <svg
-      width={size}
-      height={size}
+      className={svg()}
       fill="var(--colors-secondary)"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
