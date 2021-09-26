@@ -35,8 +35,8 @@ export default function BlogContainer({
   return (
     <Container
       title={`${frontmatter.title} - Greg Ogun`}
-      // description={frontmatter.summary}
-      // date={new Date(frontmatter.publishedAt).toISOString()}
+      description={frontmatter.description}
+      date={new Date(frontmatter.publishedAt).toISOString()}
       type="article"
     >
       <Article>
