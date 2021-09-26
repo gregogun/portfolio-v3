@@ -36,7 +36,7 @@ const VisuallyHidden = styled('span', {
 
 const Hero = styled('div', {
   '@bp3': {
-    pl: '4rem',
+    pl: '$8',
   },
 });
 
@@ -131,7 +131,7 @@ const Socials = () => {
 
 export default function Home() {
   return (
-    <Container>
+    <Container title="Greg Ogun">
       <Hero>
         <h1
           className={text({

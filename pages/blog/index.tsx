@@ -123,9 +123,9 @@ const BlogCard = ({ post }: { post: PostProps }) => {
   );
 };
 
-export default function Posts({ posts }) {
+export default function Blog({ posts }) {
   return (
-    <Container>
+    <Container title="Blog - Greg Ogun">
       <h1
         className={text({
           size: '3xl',

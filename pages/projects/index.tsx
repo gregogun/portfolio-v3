@@ -124,7 +124,7 @@ const ProjectCard = ({ title, src, summary, imgSrc }) => {
 
 export default function Projects() {
   return (
-    <Container>
+    <Container title="Projects - Greg Ogun">
       <h1
         className={text({
           css: {
