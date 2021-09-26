@@ -1,3 +1,6 @@
+import * as React from 'react';
+
+/* Types for blog related components */
 export type Frontmatter = {
   title: string;
   description: string;
@@ -11,3 +14,7 @@ export type Post = {
   code?: any;
   slug?: any;
 };
+
+export interface IconProps extends React.SVGAttributes<SVGElement> {
+  children?: never;
+}

@@ -5,7 +5,7 @@ import { css, styled } from 'stitches.config';
 import Container from './container';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import type { Frontmatter } from 'types/post';
+import type { Frontmatter } from 'types';
 import { parseISO, format } from 'date-fns';
 
 const rounded = css({

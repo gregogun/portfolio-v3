@@ -7,7 +7,7 @@ import { list } from '@/styles/list';
 import { styled } from 'stitches.config';
 import { flex } from '@/styles/utils/flex';
 import { useRef } from 'react';
-import type { Post } from 'types/post';
+import type { Post } from 'types';
 import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
 
