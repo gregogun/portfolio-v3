@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
-export default function useToggle(initialValue = false) {
+/* typing return as any until issue fix */
+export default function useToggle(initialValue = false): any {
   const [value, setValue] = useState(initialValue);
   const toggle = useCallback(() => {
     setValue((v) => !v);
