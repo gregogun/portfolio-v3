@@ -2,7 +2,7 @@ import { styled } from 'stitches.config';
 import Head from 'next/head';
 import { flex } from '@/styles/utils/flex';
 import { link } from '@/styles/link';
-import Navbar from '@/components/navbar';
+import { Navbar } from '@/components/navbar';
 
 const PageContainer = styled('div', {
   width: '100%',
