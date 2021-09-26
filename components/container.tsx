@@ -18,13 +18,13 @@ const PageContainer = styled('div', {
 const Navbar = styled('nav', {
   height: '64px',
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'space-between',
-  marginBottom: '64px',
+  marginBottom: '$8',
 });
 
 const Flex = styled('div', {
   display: 'flex',
+  alignItems: 'center',
   justifyItems: 'center',
 });
 
@@ -41,7 +41,7 @@ const Menu = styled('ul', {
 const ThemeToggleButton = () => {
   return (
     <ThemeToggle>
-      <Sun size="24px" />
+      <Sun size="1.5rem" />
     </ThemeToggle>
   );
 };
@@ -111,13 +111,17 @@ const Container = ({ ...props }: ContainerProps) => {
     <PageContainer
       css={{
         '@bp1': {
-          p: '$3',
-        },
-        '@bp2': {
           p: '$4',
         },
+        '@bp2': {
+          p: '$8',
+        },
+        '@bp3': {
+          mt: '$4',
+          p: '$6',
+        },
         '@bp4': {
-          mt: '64px',
+          mt: '$8',
         },
         pb: '$4',
       }}
@@ -139,7 +143,7 @@ const Container = ({ ...props }: ContainerProps) => {
         <Navbar>
           <Flex>
             <LogoButton>
-              <Logo size="3.5rem" />
+              <Logo />
             </LogoButton>
             <Menu role="menu">
               <MenuItem href="/projects">projects</MenuItem>
@@ -156,8 +160,10 @@ const Container = ({ ...props }: ContainerProps) => {
           className={flex({
             spaced: 'true',
             css: {
+              '@bp3': {
+                pl: meta.title === 'Greg Ogun' ? '$8' : 0,
+              },
               mt: '$8',
-              pl: meta.title === 'Greg Ogun' ? '$8' : 0,
             },
           })}
         >
