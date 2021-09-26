@@ -8,7 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:jest-dom/recommended',
-    'prettier'
+    'prettier',
   ],
   plugins: [
     'react',
@@ -16,7 +16,7 @@ module.exports = {
     'import',
     'jsx-a11y',
     'jest-dom',
-    'testing-library'
+    'testing-library',
   ],
   rules: {
     'react/prop-types': 0,
@@ -28,8 +28,8 @@ module.exports = {
         // may need to rename to NextLink depending on usage
         components: ['Link'],
         specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref', 'preferButton']
-      }
+        aspects: ['invalidHref', 'preferButton'],
+      },
     ],
     // may want to revise once becoming more comfortable with ts
     '@typescript-eslint/explicit-function-return-type': 0,
@@ -46,14 +46,14 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       2,
       {
-        argsIgnorePattern: '^_'
-      }
+        argsIgnorePattern: '^_',
+      },
     ],
     'no-console': [
-      2,
+      1,
       {
-        allow: ['warn', 'error']
-      }
+        allow: ['warn', 'error'],
+      },
     ],
     'import/no-extraneous-dependencies': [
       2,
@@ -63,34 +63,34 @@ module.exports = {
           '**/*.test.tsx',
           '**/*.spec.tsx',
           '**/*.test.ts',
-          '**/*.spec.ts'
-        ]
-      }
-    ]
+          '**/*.spec.ts',
+        ],
+      },
+    ],
   },
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      extends: ['plugin:testing-library/react']
-    }
+      extends: ['plugin:testing-library/react'],
+    },
   ],
   env: {
     jest: true,
     es6: true,
     browser: true,
-    node: true
+    node: true,
   },
   settings: {
     react: {
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
-  }
+      jsx: true,
+    },
+  },
 };
