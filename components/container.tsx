@@ -89,6 +89,10 @@ const MenuItem = ({ href, children, ...props }) => {
 
 interface ContainerProps {
   title: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  date?: string;
   children: JSX.Element | JSX.Element[];
 }
 
