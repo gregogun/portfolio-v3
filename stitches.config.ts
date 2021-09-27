@@ -14,6 +14,8 @@ export const stitchesConfig = createStitches({
       neutral300: '#8f8f8f',
       neutral400: '#555555',
       neutral500: '#2f2f2f',
+      purple: '#6556d9',
+      teal: '#81e6d9',
       gradient1: 'linear-gradient(70deg, #4158D0, #C850C0, #FFCC70)',
       gradient2: 'linear-gradient(to right, #85FFBD, #FFFB7D)',
       gradient3: 'linear-gradient(to right, #0093E9, #80D0C7)',
@@ -23,7 +25,8 @@ export const stitchesConfig = createStitches({
       secondary: '$black',
       tertiary: '$neutral400',
       accent: '$neutral50',
-      gradientLight: 'gradient1',
+      brand: '$purple',
+      gradient: 'gradient1',
     },
     fonts: {
       body: 'InterVariable, apple-system, sans-serif',
@@ -169,6 +172,8 @@ export const darkTheme = stitchesConfig.createTheme('dark-theme', {
     secondary: '$white',
     tertiary: '$neutral300',
     accent: '$neutral500',
+    brand: '$teal',
+    gradient: '$gradient2',
   },
 });
 
@@ -197,7 +202,7 @@ export const globalStyles = stitchesConfig.globalCss({
   },
   '*:focus': {
     outline: '1px dashed $secondary',
-    outlineOffset: '1px',
+    outlineOffset: '2px',
   },
   svg: { display: 'inline-block', verticalAlign: 'middle' },
 
