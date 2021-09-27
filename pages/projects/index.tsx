@@ -29,10 +29,10 @@ const ProjectCard = ({ title, src, summary, imgSrc }) => {
           borderRadius: rounded,
           backgroundColor: 'transparent',
           '&:hover': {
-            boxShadow: '0 0 0 0.25rem #7B61FF',
+            boxShadow: '0 0 0 0.25rem var(--colors-purple)',
           },
           '&:focus-within': {
-            boxShadow: '0 0 0 0.25rem #7B61FF',
+            boxShadow: '0 0 0 0.25rem var(--colors-purple)',
           },
         },
       })}
