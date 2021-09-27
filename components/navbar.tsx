@@ -141,8 +141,8 @@ const MenuIcon = ({ clicked }) => {
         css={{
           width: '32px',
           height: '2px',
-          top: clicked ? '24px' : '16px',
-          left: '$2',
+          top: clicked ? '23px' : '16px',
+          left: '9px',
           transform: clicked ? 'rotate(45deg)' : 'none',
         }}
       />
@@ -150,8 +150,8 @@ const MenuIcon = ({ clicked }) => {
         css={{
           width: clicked ? '32px' : '16px',
           height: '2px',
-          bottom: clicked ? '22px' : '16px',
-          left: clicked ? '$2' : '$5',
+          bottom: clicked ? '23px' : '16px',
+          left: clicked ? '9px' : '$5',
           transform: clicked ? 'rotate(-45deg)' : 'none',
         }}
       />
@@ -208,9 +208,10 @@ export const MobileNav = ({ clicked }) => {
           projects
         </MenuItem>
         <hr className={line()} />
-        <MenuItem mobile css={{ mb: '$8' }} large href="/blog">
+        <MenuItem mobile css={{ mb: '$4' }} large href="/blog">
           blog
         </MenuItem>
+        <hr className={line()} />
         <ThemeToggleButton
           css={{
             display: 'block',
