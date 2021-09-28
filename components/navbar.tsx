@@ -6,6 +6,8 @@ import { Logo, Sun } from './icons';
 import NextLink from 'next/link';
 import { text } from '@/styles/text';
 import useToggle from '@/utils/hooks/useToggle';
+import FocusTrap from 'focus-trap-react';
+import useMediaQuery from '@/utils/hooks/useMediaQuery';
 
 /* styled elements */
 
@@ -17,7 +19,7 @@ const line = css({
   backgroundImage: 'linear-gradient(to right, $primary, $accent, $primary)',
 });
 
-const Nav = styled('nav', {
+const NavWrap = styled('nav', {
   height: '64px',
   display: 'flex',
   justifyContent: 'space-between',
@@ -33,19 +35,6 @@ const Flex = styled('div', {
 const Center = styled('div', {
   display: 'grid',
   placeItems: 'center',
-});
-
-const Menu = styled('ul', {
-  display: 'flex',
-  px: '$1',
-});
-
-const Overlay = styled('div', {
-  zIndex: '$overlay',
-  width: '100%',
-  height: '100vh',
-  position: 'fixed',
-  bg: '$primary',
 });
 
 /* theme toggle button styles */
@@ -114,7 +103,7 @@ const Link = ({ children, href, mobile = false }) => {
 
 const MenuItem = ({ href, children, ...props }) => {
   return (
-    <Center as="li" role="menuitem" css={{ mr: '16px', ...props.css }}>
+    <Center as="li" css={{ mr: '16px', ...props.css }}>
       <Link mobile={props.mobile && true} href={href}>
         {children}
       </Link>
@@ -134,6 +123,11 @@ const LineBox = styled('div', {
   height: '100%',
   position: 'relative',
   transition: 'all 250ms ease-out',
+});
+
+const Menu = styled('ul', {
+  display: 'flex',
+  px: '$1',
 });
 
 const MenuIcon = ({ clicked }) => {
@@ -193,15 +187,27 @@ const LogoButton = ({ children }) => {
   );
 };
 
-export const MobileNav = ({ clicked }) => {
+const Overlay = styled('div', {
+  zIndex: '$overlay',
+  width: '100%',
+  height: '100vh',
+  position: 'fixed',
+  bg: '$primary',
+});
+
+export const MobileMenu = ({ clicked }) => {
+  const isLarge = useMediaQuery('(min-width: 1024px)');
   if (clicked) {
     return (
-      <Overlay>
+      <Overlay
+        css={{
+          display: isLarge ? 'none' : 'block',
+        }}
+      >
         <Menu
           css={{
             flexDirection: 'column',
           }}
-          role="menu"
         >
           <MenuItem mobile css={{ mb: '$4' }} large href="/projects">
             projects
@@ -225,49 +231,48 @@ export const MobileNav = ({ clicked }) => {
   return null;
 };
 
-const FullNav = ({ clicked, toggleClicked }) => {
+const FullNav = () => {
+  const isLarge = useMediaQuery('(min-width: 1024px)');
+  const [clicked, toggleClicked] = useToggle();
   return (
-    <Nav>
-      <Flex>
-        <LogoButton>
-          <Logo />
-        </LogoButton>
-        <Menu
-          css={{
-            '@bp1': {
-              display: 'none',
-            },
-            '@bp3': {
-              display: 'flex',
-            },
-          }}
-          role="menu"
-        >
-          <MenuItem href="/projects">projects</MenuItem>
-          <MenuItem href="/blog">blog</MenuItem>
-        </Menu>
-      </Flex>
-      <MenuButton clicked={clicked} toggleClicked={toggleClicked} />
-      <ThemeToggleButton
-        css={{
-          '@bp1': {
-            display: 'none',
-          },
-          '@bp3': {
-            display: 'block',
-          },
-        }}
-      />
-    </Nav>
+    <FocusTrap active={clicked}>
+      <div>
+        <NavWrap>
+          <Flex>
+            <LogoButton>
+              <Logo />
+            </LogoButton>
+            <Menu
+              css={{
+                display: isLarge ? 'flex' : 'none',
+              }}
+            >
+              <MenuItem href="/projects">projects</MenuItem>
+              <MenuItem href="/blog">blog</MenuItem>
+            </Menu>
+          </Flex>
+          <MenuButton clicked={clicked} toggleClicked={toggleClicked} />
+          <ThemeToggleButton
+            css={{
+              '@bp1': {
+                display: 'none',
+              },
+              '@bp3': {
+                display: 'block',
+              },
+            }}
+          />
+        </NavWrap>
+        <MobileMenu clicked={clicked} />
+      </div>
+    </FocusTrap>
   );
 };
 
 export const Navbar = () => {
-  const [clicked, toggleClicked] = useToggle();
   return (
     <>
-      <FullNav clicked={clicked} toggleClicked={toggleClicked} />
-      <MobileNav clicked={clicked} />
+      <FullNav />
     </>
   );
 };
