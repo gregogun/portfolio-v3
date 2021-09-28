@@ -10,7 +10,6 @@ import FocusTrap from 'focus-trap-react';
 import useMediaQuery from '@/utils/hooks/useMediaQuery';
 
 /* styled elements */
-
 const line = css({
   mb: '32px',
   border: 0,
@@ -231,7 +230,7 @@ export const MobileMenu = ({ clicked }) => {
   return null;
 };
 
-const FullNav = () => {
+export const Navbar = () => {
   const isLarge = useMediaQuery('(min-width: 1024px)');
   const [clicked, toggleClicked] = useToggle();
   return (
@@ -266,13 +265,5 @@ const FullNav = () => {
         <MobileMenu clicked={clicked} />
       </div>
     </FocusTrap>
-  );
-};
-
-export const Navbar = () => {
-  return (
-    <>
-      <FullNav />
-    </>
   );
 };
