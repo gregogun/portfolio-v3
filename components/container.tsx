@@ -1,8 +1,10 @@
-import { styled } from 'stitches.config';
+import { css, styled } from 'stitches.config';
 import Head from 'next/head';
 import { flex } from '@/styles/utils/flex';
 import { link } from '@/styles/link';
 import { Navbar } from '@/components/navbar';
+
+const box = css({});
 
 const PageContainer = styled('div', {
   width: '100%',
@@ -35,14 +37,13 @@ const Container = ({ ...props }: ContainerProps) => {
     <PageContainer
       css={{
         '@bp1': {
-          p: '$4',
+          p: '$2',
         },
         '@bp2': {
-          p: '$8',
+          p: '$6',
         },
         '@bp3': {
           mt: '$4',
-          p: '$6',
         },
         '@bp4': {
           mt: '$8',
@@ -66,7 +67,21 @@ const Container = ({ ...props }: ContainerProps) => {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main
+        className={box({
+          css: {
+            '@bp1': {
+              p: '$2',
+            },
+            '@bp2': {
+              p: '$6',
+            },
+            // '@bp3': {
+            //   p: '$6',
+            // },
+          },
+        })}
+      >
         {children}
         <footer
           role="contentinfo"
