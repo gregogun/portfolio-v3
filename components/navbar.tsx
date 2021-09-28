@@ -13,7 +13,7 @@ import useMediaQuery from '@/utils/hooks/useMediaQuery';
 const line = css({
   mb: '32px',
   border: 0,
-  width: '100%',
+  width: '60%',
   height: '2px',
   backgroundImage: 'linear-gradient(to right, $primary, $accent, $primary)',
 });
@@ -192,6 +192,7 @@ const Overlay = styled('div', {
   height: '100vh',
   position: 'fixed',
   bg: '$primary',
+  right: 0,
 });
 
 export const MobileMenu = ({ clicked }) => {
