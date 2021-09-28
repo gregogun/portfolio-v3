@@ -44,6 +44,8 @@ const Overlay = styled('div', {
   zIndex: '$overlay',
   width: '100%',
   height: '100vh',
+  position: 'fixed',
+  bg: '$primary',
 });
 
 /* theme toggle button styles */
@@ -161,7 +163,7 @@ const MenuIcon = ({ clicked }) => {
 
 const MenuButton = ({ clicked, toggleClicked }) => {
   const handleClick = () => {
-    return toggleClicked();
+    toggleClicked();
   };
   return (
     <button
@@ -192,35 +194,35 @@ const LogoButton = ({ children }) => {
 };
 
 export const MobileNav = ({ clicked }) => {
-  return (
-    <Overlay
-      css={{
-        display: clicked ? 'block' : 'none',
-      }}
-    >
-      <Menu
-        css={{
-          flexDirection: 'column',
-        }}
-        role="menu"
-      >
-        <MenuItem mobile css={{ mb: '$4' }} large href="/projects">
-          projects
-        </MenuItem>
-        <hr className={line()} />
-        <MenuItem mobile css={{ mb: '$4' }} large href="/blog">
-          blog
-        </MenuItem>
-        <hr className={line()} />
-        <ThemeToggleButton
+  if (clicked) {
+    return (
+      <Overlay>
+        <Menu
           css={{
-            display: 'block',
-            mx: 'auto',
+            flexDirection: 'column',
           }}
-        />
-      </Menu>
-    </Overlay>
-  );
+          role="menu"
+        >
+          <MenuItem mobile css={{ mb: '$4' }} large href="/projects">
+            projects
+          </MenuItem>
+          <hr className={line()} />
+          <MenuItem mobile css={{ mb: '$4' }} large href="/blog">
+            blog
+          </MenuItem>
+          <hr className={line()} />
+          <ThemeToggleButton
+            css={{
+              display: 'block',
+              mx: 'auto',
+            }}
+          />
+        </Menu>
+      </Overlay>
+    );
+  }
+
+  return null;
 };
 
 const FullNav = ({ clicked, toggleClicked }) => {
