@@ -8,6 +8,7 @@ import { text } from '@/styles/text';
 import useToggle from '@/utils/hooks/useToggle';
 import FocusTrap from 'focus-trap-react';
 import useMediaQuery from '@/utils/hooks/useMediaQuery';
+import { VisuallyHidden } from './sr-only';
 
 /* styled elements */
 const line = css({
@@ -181,7 +182,10 @@ const MenuButton = ({ clicked, toggleClicked }) => {
 const LogoButton = ({ children }) => {
   return (
     <NextLink href="/">
-      <a className={iconButton()}>{children}</a>
+      <a className={iconButton()}>
+        {children}
+        <VisuallyHidden>Home</VisuallyHidden>
+      </a>
     </NextLink>
   );
 };
