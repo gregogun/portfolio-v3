@@ -1,6 +1,7 @@
 import { icon } from '@/styles/icon';
 import { styled } from 'stitches.config';
 import socials from 'data/socials';
+import { VisuallyHidden } from './sr-only';
 
 const ListItem = styled('li', {
   listStyle: 'none',
@@ -16,18 +17,6 @@ const List = styled('ul', {
   alignItems: 'center',
   justifyContent: 'space-between',
   width: '248px',
-});
-
-const VisuallyHidden = styled('span', {
-  position: 'absolute',
-  width: '1px',
-  height: '1px',
-  padding: 0,
-  margin: '-1px',
-  overflow: 'hidden',
-  clip: 'rect(0, 0, 0, 0)',
-  whiteSpace: 'nowrap' /* added line */,
-  border: 0,
 });
 
 const Link = ({ children, href, isExternal = false }) => {
