@@ -26,7 +26,7 @@ export const stitchesConfig = createStitches({
       tertiary: '$neutral400',
       accent: '$neutral50',
       brand: '$purple',
-      gradient: 'gradient1',
+      gradient: '$gradient1',
     },
     fonts: {
       body: 'InterVariable, apple-system, sans-serif',
@@ -67,7 +67,7 @@ export const stitchesConfig = createStitches({
       xs: '2px',
       sm: '4px',
       md: '8px',
-      lg: '16px',
+      lg: '24px',
       full: '9999px',
     },
     zIndices: {
