@@ -19,7 +19,7 @@ interface ContainerProps {
   image?: string;
   type?: string;
   date?: string;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }
 
 const Container = ({ ...props }: ContainerProps) => {
@@ -76,36 +76,33 @@ const Container = ({ ...props }: ContainerProps) => {
             '@bp2': {
               p: '$6',
             },
-            // '@bp3': {
-            //   p: '$6',
-            // },
           },
         })}
       >
         {children}
-        <footer
-          role="contentinfo"
-          className={flex({
-            spaced: 'true',
-            css: {
-              '@bp3': {
-                pl: meta.title === 'Greg Ogun' ? '$8' : 0,
-              },
-              mt: '$8',
-            },
-          })}
-        >
-          <div>
-            <p>
-              Built with ♥ and{' '}
-              <a href="https://nextjs.org" className={link()}>
-                Next.js
-              </a>{' '}
-              © 2021 Greg Ogun.
-            </p>
-          </div>
-        </footer>
       </main>
+      <footer
+        role="contentinfo"
+        className={flex({
+          spaced: 'true',
+          css: {
+            '@bp3': {
+              pl: meta.title === 'Greg Ogun' ? '$8' : 0,
+            },
+            mt: '$8',
+          },
+        })}
+      >
+        <div>
+          <p>
+            Built with ♥ and{' '}
+            <a href="https://nextjs.org" className={link()}>
+              Next.js
+            </a>{' '}
+            © 2021 Greg Ogun.
+          </p>
+        </div>
+      </footer>
     </PageContainer>
   );
 };
