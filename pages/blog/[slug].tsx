@@ -1,9 +1,21 @@
 import { getMDXComponent } from 'mdx-bundler/client';
 import { getAllPosts, getSinglePost } from '@/lib/mdx';
 import BlogContainer from '@/components/blogContainer';
-import { ImageRounded } from '@/components/image';
+// import { ImageRounded } from '@/components/image';
+import NextImage from 'next/image';
 import { useMemo } from 'react';
 import { text } from '@/styles/text';
+import { css } from 'stitches.config';
+
+const image = css({
+  borderRadius: '$lg',
+});
+
+const Image = (props) => {
+  return (
+    <NextImage {...props} src={props.src} alt={props.alt} className={image()} />
+  );
+};
 
 export default function Post({ code, frontmatter }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
@@ -42,7 +54,7 @@ export default function Post({ code, frontmatter }) {
               })}
             />
           ),
-          ImageRounded,
+          Image,
         }}
       />
     </BlogContainer>
