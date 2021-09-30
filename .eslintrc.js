@@ -56,7 +56,7 @@ module.exports = {
       },
     ],
     'import/no-extraneous-dependencies': [
-      2,
+      1,
       {
         devDependencies: [
           '**/setup.ts',
