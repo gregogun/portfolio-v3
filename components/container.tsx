@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { flex } from '@/styles/utils/flex';
 import { link } from '@/styles/link';
 import { Navbar } from '@/components/navbar';
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
+import { srOnly } from './sr-only';
 
 const box = css({});
 
@@ -64,9 +66,11 @@ const Container = ({ ...props }: ContainerProps) => {
         <meta name="twitter:description" content={meta.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <SkipNavLink className={srOnly({ type: 'skipNav' })} />
       <header>
         <Navbar />
       </header>
+      <SkipNavContent />
       <main
         className={box({
           css: {
