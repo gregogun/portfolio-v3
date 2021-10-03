@@ -91,7 +91,7 @@ const Container = ({ ...props }: ContainerProps) => {
           spaced: 'true',
           css: {
             '@bp3': {
-              pl: meta.title === 'Greg Ogun' ? '$8' : 0,
+              pl: meta.title === 'Greg Ogun' ? '$9' : '$6',
             },
             mt: '$8',
           },

@@ -179,10 +179,14 @@ const MenuButton = ({ clicked, toggleClicked }) => {
 };
 
 /* Logo button styles */
-const LogoButton = ({ children }) => {
+const LogoButton = ({ children, ...props }) => {
   return (
     <NextLink href="/">
-      <a className={iconButton()}>
+      <a
+        className={iconButton({
+          css: { ...props.css },
+        })}
+      >
         {children}
         <VisuallyHidden>Home</VisuallyHidden>
       </a>
@@ -243,7 +247,11 @@ export const Navbar = () => {
       <div>
         <NavWrap>
           <Flex>
-            <LogoButton>
+            <LogoButton
+              css={{
+                mr: '$5',
+              }}
+            >
               <Logo />
             </LogoButton>
             <Menu
