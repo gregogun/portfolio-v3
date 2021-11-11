@@ -35,6 +35,41 @@ export default function Home() {
               fontFamily: '$heading',
               mb: '2.5rem',
             },
+            size: 'xl',
+            weight: 'bold',
+          })}
+        >
+          currently building this space
+        </h1>
+        <p
+          className={text({
+            css: {
+              mb: '2.5rem',
+            },
+          })}
+        >
+          in the meantime {" you're "}, feel free to check out my latest project{' '}
+          <NextLink href="/projects" passHref>
+            <a className={link()} href="https://tuskk.vercel.app/">
+              {`tusk.`}
+            </a>
+          </NextLink>
+        </p>
+        <p
+          className={text({
+            css: {
+              mb: '2.5rem',
+            },
+          })}
+        >
+          you can also connect with me on my socials below.
+        </p>
+        {/* <h1
+          className={text({
+            css: {
+              fontFamily: '$heading',
+              mb: '2.5rem',
+            },
             size: '3xl',
             weight: 'extrabold',
           })}
@@ -74,7 +109,7 @@ export default function Home() {
               {`what I'm working on.`}
             </a>
           </NextLink>
-        </p>
+        </p> */}
         <footer>
           <Socials />
         </footer>

@@ -2,11 +2,78 @@ import { css, styled } from 'stitches.config';
 import Head from 'next/head';
 import { flex } from '@/styles/utils/flex';
 import { link } from '@/styles/link';
-import { Navbar } from '@/components/navbar';
+// import { Navbar } from '@/components/navbar';
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav';
-import { srOnly } from './sr-only';
+import { srOnly, VisuallyHidden } from './sr-only';
+import NextLink from 'next/link';
+import { iconButton } from '@/styles/button';
+import { Logo, Sun } from './icons';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const box = css({});
+
+const Flex = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyItems: 'center',
+  justifyContent: 'space-between',
+
+  '@bp1': {
+    mb: '$6',
+  },
+});
+
+const ThemeToggle = ({ children, ...props }) => {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
+
+  const toggleTheme = () => {
+    theme === 'dark' ? setTheme('light') : setTheme('dark');
+  };
+
+  const mode = theme === 'dark' ? 'light' : 'dark';
+
+  return (
+    <button
+      aria-label={`Activate ${mode} mode`}
+      className={iconButton({
+        css: {
+          ...props.css,
+        },
+      })}
+      onClick={toggleTheme}
+    >
+      {children}
+    </button>
+  );
+};
+
+const ThemeToggleButton = ({ ...props }) => {
+  return (
+    <ThemeToggle {...props}>
+      <Sun size="1.5rem" />
+    </ThemeToggle>
+  );
+};
+
+const LogoButton = ({ children, ...props }) => {
+  return (
+    <NextLink href="/">
+      <a
+        className={iconButton({
+          css: { ...props.css },
+        })}
+      >
+        {children}
+        <VisuallyHidden>Home</VisuallyHidden>
+      </a>
+    </NextLink>
+  );
+};
 
 const PageContainer = styled('div', {
   width: '100%',
@@ -67,9 +134,19 @@ const Container = ({ ...props }: ContainerProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SkipNavLink className={srOnly({ type: 'skipNav' })} />
-      <header>
+      {/* <header>
         <Navbar />
-      </header>
+      </header> */}
+      <Flex>
+        <LogoButton
+          css={{
+            mr: '$5',
+          }}
+        >
+          <Logo />
+        </LogoButton>
+        <ThemeToggleButton />
+      </Flex>
       <SkipNavContent />
       <main
         className={box({

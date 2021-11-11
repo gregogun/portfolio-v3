@@ -1,6 +1,6 @@
 import Container from '@/components/container';
 import { text } from '@/styles/text';
-import { xylo } from '@/data/projects/xylo';
+import { tusk } from '@/data/projects/xylo';
 import { list } from '@/styles/list';
 import { link } from '@/styles/link';
 import { css, styled } from 'stitches.config';
@@ -49,10 +49,10 @@ const ProjectCard = ({ title, src, summary, imgSrc }) => {
             display: 'block',
             backgroundImage: 'none',
             position: 'absolute',
-            top: '-4px',
-            left: '-4px',
-            width: 'calc(100% + 8px)',
-            height: 'calc(100% + 8px)',
+            top: '-8px',
+            left: '-8px',
+            width: 'calc(100% + 16px)',
+            height: 'calc(100% + 16px)',
             borderRadius: 'inherit',
             zIndex: -1,
           },
@@ -63,6 +63,8 @@ const ProjectCard = ({ title, src, summary, imgSrc }) => {
           },
 
           '&:focus-within': {
+            borderRadius: rounded,
+
             '&::before': {
               backgroundImage: '$gradient',
             },
@@ -91,7 +93,7 @@ const ProjectCard = ({ title, src, summary, imgSrc }) => {
             cursor: 'pointer',
             position: 'absolute',
             boxSizing: 'border-box',
-            borderRadius: 'inherit',
+            borderRadius: `calc(${rounded} - 2px)`,
             display: 'block',
             background: cardGradient,
             margin: 0,
@@ -148,11 +150,11 @@ const ProjectCard = ({ title, src, summary, imgSrc }) => {
             css: {
               '@bp1': {
                 bottom: '6rem',
-                left: '3rem',
+                left: '2rem',
               },
               '@bp2': {
-                bottom: '5rem',
-                left: '3rem',
+                bottom: '6rem',
+                left: '2rem',
               },
               position: 'absolute',
               color: '$white',
@@ -221,10 +223,10 @@ export default function Projects() {
           size: 'lg',
         })}
       >
-        {`A list of things I'm currently working on.`}
+        {`Some things I've built.`}
       </p>
       <ul className={list()}>
-        <ProjectCard {...xylo} />
+        <ProjectCard {...tusk} />
       </ul>
     </Container>
   );

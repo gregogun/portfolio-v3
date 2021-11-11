@@ -205,26 +205,6 @@ export const globalStyles = stitchesConfig.globalCss({
     outlineOffset: '2px',
   },
   svg: { display: 'inline-block', verticalAlign: 'middle' },
-
-  // COMMENTING OUT TILL CHECKS IN PROD
-
-  // '@dark': {
-  //   // notice the `media` definition on the stitches.config.ts file
-  //   ':root:not(.light)': {
-  //     ...Object.keys(darkTheme.colors).reduce((varSet, currentColorKey) => {
-  //       const currentColor = darkTheme.colors[currentColorKey];
-  //       const currentColorValue =
-  //         currentColor.value.substring(0, 1) === '$'
-  //           ? `$colors${currentColor.value}`
-  //           : currentColor.value;
-
-  //       return {
-  //         [currentColor.variable]: currentColorValue,
-  //         ...varSet
-  //       };
-  //     }, {})
-  //   }
-  // },
 });
 
 globalStyles();

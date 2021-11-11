@@ -1,6 +1,7 @@
-export const xylo = {
-  title: 'Xylo',
-  src: 'https://gregogun-xylo.vercel.app/',
-  summary: 'A finance dashboard powered by the Plaid Open Banking API.',
-  imgSrc: '/static/images/xylo/homepage.jpg',
+export const tusk = {
+  title: 'Tusk',
+  src: 'https://tuskk.vercel.app/',
+  summary:
+    'A simple todo app, focused on a pleasant, lightweight user experience.',
+  imgSrc: '/static/images/tusk/homepage.png',
 };
