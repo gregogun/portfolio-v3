@@ -3,7 +3,6 @@ import { text } from 'styles/text';
 import { styled } from 'stitches.config';
 import { link } from '@/styles/link';
 import Container from '@/components/container';
-import NextLink from 'next/link';
 import Socials from '@/components/socials';
 
 const Hero = styled('div', {
@@ -48,12 +47,10 @@ export default function Home() {
             },
           })}
         >
-          in the meantime {" you're "}, feel free to check out my latest project{' '}
-          <NextLink href="/projects" passHref>
-            <a className={link()} href="https://tuskk.vercel.app/">
-              {`tusk.`}
-            </a>
-          </NextLink>
+          in the meantime, feel free to check out my latest project{' '}
+          <a className={link()} href="https://tuskk.vercel.app/">
+            {`tusk.`}
+          </a>
         </p>
         <p
           className={text({
